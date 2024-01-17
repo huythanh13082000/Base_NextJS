@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+    --primary: #010A18;
+}
+}
+
+@layer base {
+    body {
+        @apply bg-primary text-white text-base;
+    }
+}
