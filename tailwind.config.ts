@@ -34,6 +34,7 @@ const config = {
       },
       colors: {
         primary: "var(--primary)",
+        span: "#969DB0",
       },
     },
   },
