@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const CardPortfolio = () => {
   return (
-    <div className='w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 mb-8 p-[16px]'>
-      <div className='p-[32px] border-[#1e2736] border-[1px]'>
+    <div className='w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 p-[16px]'>
+      <div className='p-[32px] border-[#1e2736] border-[1px] rounded-[16px]'>
         <Image
           src={'/images/logo_new_header.png'}
           alt=''
