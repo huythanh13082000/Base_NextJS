@@ -14,11 +14,15 @@ const Portfolio = () => {
   return (
     <div className='w-full'>
       <div
-        className='text-center  leading-[80px] p-[60px]'
+        className='text-center lg:leading-[80px] p-[30px] leading-[30px]'
         style={containerStyle}
       >
-        <h1 className='text-[70px] font-bold leading-[80px]'>Portfolio</h1>
-        <p className='text-[20px]'>We reveal representative success stories.</p>
+        <h1 className='lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px]'>
+          Portfolio
+        </h1>
+        <p className='text-[14px] lg:text-[18px]'>
+          We reveal representative success stories.
+        </p>
       </div>
       <div className='flex flex-wrap -mx-4 mb-[3rem]'>
         <CardPortfolio onClick={() => setOpen(true)} />
