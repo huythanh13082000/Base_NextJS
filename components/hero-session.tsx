@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import CustomDivider from "@/components/custom-divider";
 
 const HeroSession = () => {
   return (
@@ -33,7 +34,7 @@ const HeroSession = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-[0.16] mt-[100px]"></div>
+      <CustomDivider className="mt-[100px]" />
     </section>
   );
 };
