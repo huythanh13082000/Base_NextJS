@@ -1,6 +1,7 @@
 import React from "react";
 import MainNav from "@/components/main-nav";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import CustomDivider from "@/components/custom-divider";
 
 const SiteHeader = () => {
   return (
@@ -15,7 +16,7 @@ const SiteHeader = () => {
         </div>
         <MainNav />
       </div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-[0.16]"></div>
+      <CustomDivider />
     </div>
   );
 };
