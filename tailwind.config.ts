@@ -36,6 +36,9 @@ const config = {
         primary: "var(--primary)",
         span: "#969DB0",
       },
+      backgroundImage : {
+        divider : "linear-gradient(270deg, rgba(163, 177, 194, 0.00) 28.87%, #A3B1C2 45.39%, #A3B1C2 53.54%, rgba(163, 177, 194, 0.00) 70.06%)"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
