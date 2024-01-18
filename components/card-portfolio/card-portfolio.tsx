@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 
@@ -6,11 +7,12 @@ const containerStyle = {
     'radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618',
 }
 
-const CardPortfolio = (props: {data?: PortfolioType}) => {
+const CardPortfolio = (props: {data?: PortfolioType; onClick?: () => void}) => {
   return (
     <div
       className='w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 p-[16px]'
       style={containerStyle}
+      onClick={() => props.onClick && props.onClick()}
     >
       <div className='p-[32px] border-[#1e2736] border-[1px] rounded-[16px]'>
         <Image
