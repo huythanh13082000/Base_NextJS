@@ -42,6 +42,10 @@ const config = {
         title:
           "linear-gradient(180deg, #FFF 22.5%, rgba(255, 255, 255, 0.70) 100%)",
         "blue-gradient": "linear-gradient(180deg, #396FFD 0%, #0744E6 100%)",
+        lightning:
+          "radial-gradient(33.21% 54.43% at 50% 50%, #0e1d42 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
+        input:
+          "radial-gradient(89.06% 89.06% at 50% 50%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 48.41%), linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%), #010718",
       },
     },
   },
