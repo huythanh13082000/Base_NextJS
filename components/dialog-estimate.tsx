@@ -24,7 +24,7 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className='bg-[#010A18] border-[#1e2736] border-[1px] overflow-auto'>
+      <DialogContent className='bg-[#010A18] border-[#1e2736] border-[1px]'>
         <DialogHeader>
           <DialogDescription className='flex flex-col gap-6'>
             <div className='text-[18px] text-[white] font-bold text-start'>
