@@ -56,7 +56,7 @@ const CardPortfolio = (props: {data?: PortfolioType; onClick?: () => void}) => {
             className='bottom-0 absolute left-[-10px]'
           />
         </div>
-        <p className='text-[18px] font-bold mt-[24px] mb-[12px]'>
+        <p className='text-[18px] font-bold mt-[24px] mb-[12px] text-start'>
           A-BEE[아비] - 앱테크
         </p>
         <p className='text-[15px]'>Flutter, Node.Js</p>
