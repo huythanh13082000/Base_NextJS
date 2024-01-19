@@ -7,7 +7,7 @@ import CustomDivider from "@/components/custom-divider";
 const SiteFooter = () => {
   return (
     <section>
-      <div className="relative h-[400px] w-full">
+      <div className="relative h-[400px] w-full lg:px-[80px] px-4 xl:px-24">
         <Image
           src="images/bg-footer.svg"
           alt=""
@@ -17,7 +17,7 @@ const SiteFooter = () => {
         />
         <CustomDivider className="relative mb-[70px]" />
 
-        <div className="relative w-full px-24 max-xl:px-20 flex max-md:flex-col max-md:gap-10">
+        <div className="relative w-full flex max-md:flex-col max-md:gap-10">
           <div className="flex flex-1 flex-col gap-4">
             <div className="flex items-center gap-3">
               <Avatar className="h-11 w-11">

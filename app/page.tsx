@@ -8,11 +8,11 @@ import AboutSession from "@/components/about-session";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <HeroSession />
-      <PricingSession />
+      <HeroSession className="lg:px-[80px] px-4 xl:px-24" />
+      <PricingSession className="lg:px-[80px] px-4 xl:px-24" />
       <PortfolioSession />
-      <PartnerSession />
-      <AboutSession />
+      <PartnerSession className="lg:px-[80px] px-4 xl:px-24" />
+      <AboutSession className="lg:px-[80px] px-4 xl:px-24 mb-[150px]" />
     </main>
   );
 }

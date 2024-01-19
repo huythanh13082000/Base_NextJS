@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CustomDivider from "@/components/custom-divider";
-
-const HeroSession = () => {
+type HeroSessionProps = Pick<React.HTMLAttributes<HTMLDivElement>, "className">;
+const HeroSession = ({ className }: HeroSessionProps) => {
   return (
-    <section>
+    <section className={className}>
       <div className="relative w-full text-center h-[390px]">
         <Image
           src="icons/bg_hero.svg"
@@ -34,7 +34,7 @@ const HeroSession = () => {
           </div>
         </div>
       </div>
-      <div className='bg-divider w-full h-px mt-[100px]'></div>
+      <div className="bg-divider w-full h-px mt-[100px]"></div>
       {/*<CustomDivider className="mt-[100px]" />*/}
     </section>
   );
