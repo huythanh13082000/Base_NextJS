@@ -2,6 +2,7 @@
 
 import CardEstimateCalculation from '@/components/card-estimate-calculation/card-estimate-calculation'
 import {SelectCustom} from '@/components/select-custom'
+import {Button} from '@/components/ui/button'
 import React, {useState} from 'react'
 
 const containerStyle = {
@@ -14,7 +15,7 @@ const EstimatePricing = () => {
   return (
     <div className='w-full'>
       <div
-        className='text-center lg:leading-[80px] p-[30px] leading-[30px]'
+        className='text-center lg:leading-[50px] p-[30px] leading-[30px]'
         style={containerStyle}
       >
         <h1 className='lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px]'>
@@ -101,6 +102,20 @@ const EstimatePricing = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='flex justify-between items-center py-5'>
+        <div>
+          <p className='font-semibold text-sm sm:text-[18px] mb-2'>예상 견적</p>
+          <div>
+            <span className='bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[18px] sm:text-[28px]'>
+              9600
+            </span>{' '}
+            <span className='text-sm text-[#98A1B6] sm:text-[18px]'>
+              만 원 (예상 기간 7개월)
+            </span>{' '}
+          </div>
+        </div>
+        <Button>견적 보기</Button>
       </div>
     </div>
   )

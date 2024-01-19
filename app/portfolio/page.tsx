@@ -14,7 +14,7 @@ const Portfolio = () => {
   return (
     <div className='w-full'>
       <div
-        className='text-center lg:leading-[80px] p-[30px] leading-[30px]'
+        className='text-center lg:leading-[50px] p-[30px] leading-[30px]'
         style={containerStyle}
       >
         <h1 className='lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px]'>
