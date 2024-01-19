@@ -34,7 +34,8 @@ const HeroSession = () => {
           </div>
         </div>
       </div>
-      <CustomDivider className="mt-[100px]" />
+      <div className='bg-divider w-full h-px mt-[100px]'></div>
+      {/*<CustomDivider className="mt-[100px]" />*/}
     </section>
   );
 };
