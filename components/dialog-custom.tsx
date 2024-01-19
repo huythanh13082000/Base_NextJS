@@ -18,7 +18,7 @@ interface MyDialogProps {
 const DialogCustom: React.FC<MyDialogProps> = ({isOpen, onClose, children}) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent>
+      <DialogContent className='bg-[#010A18] border-[#1e2736] border-[1px]'>
         <DialogHeader>
           <DialogDescription>
             <div className='lg:flex lg:gap-6 lg:align-top '>

@@ -28,7 +28,7 @@ const Menu: React.FC<MyMenuProps> = ({isOpen, onClose, children}) => {
         <SheetTrigger>
           <Image src={'/icons/menu.svg'} alt='' width={24} height={24} />
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className='bg-[#010A18] border-0'>
           <SheetHeader>
             <SheetTitle className='flex justify-between'>
               <div className='flex items-center gap-2'>
