@@ -105,7 +105,7 @@ const EstimatePricing = () => {
       </div>
       <div className='flex justify-between items-center py-5'>
         <div>
-          <p className='font-semibold text-sm sm:text-[18px] mb-2'>예상 견적</p>
+          <p className='font-semibold  text-[18px] mb-2'>예상 견적</p>
           <div>
             <span className='bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[18px] sm:text-[28px]'>
               9600
