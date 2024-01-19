@@ -3,10 +3,10 @@ import {Checkbox} from '../ui/checkbox'
 
 const CardEstimateCalculation = () => {
   return (
-    <div className='w-[294px] border-[#1e2736] border-[1px] rounded-[16px] p-[24px]'>
-      <Checkbox />
-      <div className='flex justify-between my-[16px]'>
-        <span>모바일웹</span>
+    <div className='lg:w-[294px] border-[#1e2736] border-[1px] rounded-[16px] p-[24px] w-full md:w-[294px]'>
+      <Checkbox className='w-[22px] h-[22px] border-[#616A82] border-solid rounded-md box-border p-[2px] data-[state=checked]:bg-gradient-to-r from-[#396FFD] to-[#0744E6] data-[state=checked]:border-0 data-[state=checked]:text-[black]' />
+      <div className='flex justify-between items-center'>
+        <span className='mt-4 mb-2'>모바일웹</span>
         <span>
           <span className='bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[20px]'>
             0
