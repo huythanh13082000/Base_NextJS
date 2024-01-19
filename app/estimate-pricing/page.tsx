@@ -1,6 +1,7 @@
 'use client'
 
 import CardEstimateCalculation from '@/components/card-estimate-calculation/card-estimate-calculation'
+import DialogEstimate from '@/components/dialog-estimate'
 import {SelectCustom} from '@/components/select-custom'
 import {Button} from '@/components/ui/button'
 import React, {useState} from 'react'
@@ -12,6 +13,7 @@ const containerStyle = {
 
 const EstimatePricing = () => {
   const [tab, setTab] = useState(0)
+  const [open, setOpen] = useState(false)
   return (
     <div className='w-full'>
       <div
@@ -115,8 +117,9 @@ const EstimatePricing = () => {
             </span>{' '}
           </div>
         </div>
-        <Button>견적 보기</Button>
+        <Button onClick={() => setOpen(true)}>견적 보기</Button>
       </div>
+      <DialogEstimate isOpen={open} onClose={() => setOpen(false)} />
     </div>
   )
 }
