@@ -30,8 +30,8 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
             <div className='text-[18px] text-[white] font-bold text-start'>
               예상 견적서
             </div>
-            <div>
-              <div className='flex flex-col gap-6 ư'>
+            <div className='max-w-[calc(100vw-50px)] overflow-auto py-[12px] box-border'>
+              <div className='flex flex-col gap-6 w-[600px] sm:w-full'>
                 <div className='w-full rounded-xl border-[1px] border-solid border-[#1e2736]'>
                   <div className='w-full bg-[#0c1122] flex rounded-t-xl'>
                     <div className='w-1/3 h-11 flex items-center p-3 font-semibold text-[white]'>
