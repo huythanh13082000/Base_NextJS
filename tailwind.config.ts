@@ -101,7 +101,7 @@ const config = {
         span: "#969DB0",
       },
       boxShadow: {
-        primary: "#396FFD 0px 1px 40px",
+        secondary: "#658af1 0px 1px 40px",
       },
       backgroundImage: {
         divider:

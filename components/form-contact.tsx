@@ -96,19 +96,19 @@ const FormContact = () => {
                 <FormControl>
                   <div>
                     <div className="w-full p-1 text-base h-[42px] rounded-full border border-[#484848] bg-input-gradient flex justify-between">
-                      <div className="flex gap-1">
+                      <div className="flex gap-1 items-center">
                         {files &&
                           Array.from(files).map((file, index) => {
                             const objectUrl = URL.createObjectURL(file);
                             return (
-                              <Image
-                                key={index}
-                                src={objectUrl}
-                                width={24}
-                                height={24}
-                                alt={`Preview Image ${index}`}
-                                className="rounded-full h-auto w-auto object-contain"
-                              />
+                                <div key={index} className='relative w-6 h-6'>
+                                    <Image
+                                        src={objectUrl}
+                                        fill
+                                        alt={`Preview Image ${index}`}
+                                        className="rounded-full h-auto w-auto object-cover border"
+                                    />
+                                </div>
                             );
                           })}
                       </div>
@@ -277,7 +277,7 @@ const FormContact = () => {
           />
 
           {/* companyName and position  */}
-          <div className="flex items-center gap-8 justify-center">
+          <div className="flex gap-8 justify-center">
             {/* companyName*/}
             <div className="w-full">
               <FormField
@@ -331,7 +331,7 @@ const FormContact = () => {
           </div>
 
           {/* email and phone  */}
-          <div className="flex items-center gap-8 justify-center">
+          <div className="flex gap-8 justify-center">
             {/* email*/}
             <div className="w-full">
               <FormField
