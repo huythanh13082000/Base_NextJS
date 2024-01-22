@@ -15,18 +15,20 @@ const HeroSession = ({ className }: HeroSessionProps) => {
           className="z-0"
         />
         <div className="relative flex flex-col items-center">
-          <h1 className="pt-16 mb-4 font-bold text-[70px] leading-[80px]">
+          <h1 className="pt-16 mb-4 font-bold text-[70px] leading-[80px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
             Product Adoption Made Easy
           </h1>
-          <p className="max-w-[720px] mb-8 text-[20px] leading-[28px]">
+          <p className="max-w-[720px] mb-8 text-[20px] leading-[28px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
             Design, deploy, and test onboarding experiences as easily,
             accurately, and on time as your business wants
           </p>
-          <Button>Start building</Button>
+          <Button className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] hover:text-shadow hover:shadow-primary transition-[shadow,text-shadow] [&_.highlight]:ml-2">
+            Start building
+          </Button>
         </div>
       </div>
 
-      <div className="relative w-full h-[675px] flex items-center justify-center">
+      <div className="relative w-full h-[675px] flex items-center justify-center animate-image-rotate before:animate-image-glow before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-divider before:opacity-0 before:[filter:blur(120px)]">
         <Image src="/images/video.png" alt="Video" fill objectFit="cover" />
         <div className="absolute w-[108px] h-[108px] p-4 rounded-full border border-white border-opacity-50 cursor-pointer">
           <div className="w-full h-full rounded-full bg-[#afafaf] flex items-center justify-center">
