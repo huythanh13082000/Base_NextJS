@@ -39,7 +39,7 @@ const HeroSession = ({ className }: HeroSessionProps) => {
       </div>
 
       <HeroImage />
-      <div className="bg-divider w-full h-px mt-[100px]"></div>
+      {/*<div className="bg-divider w-full h-px mt-[100px]"></div>*/}
       {/*<CustomDivider className="mt-[100px]" />*/}
     </section>
   );
