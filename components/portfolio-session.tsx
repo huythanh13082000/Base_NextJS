@@ -1,6 +1,7 @@
 import React from "react";
 import CardPortfolio from "@/components/card-portfolio/card-portfolio";
 import Image from "next/image";
+import { fetcher } from "@/lib/utils";
 
 const PortfolioSession = () => {
   return (

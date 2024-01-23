@@ -15,7 +15,13 @@ const AboutCategoryLayout = ({ title, listItem }: AboutCategoryProps) => {
         {listItem.map((item, index) => (
           <div key={index} className="flex flex-col gap-2 items-center">
             <div className="relative w-20 h-20 max-lg:w-[72px] max-lg:h-[72px] max-md:w-[60px] max-md:h-[60px]">
-              <Image src={item.icon} alt={item.icon} fill objectFit="contain" />
+              <Image
+                src={item.icon}
+                alt={item.icon}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
             </div>
             <p>{item.name}</p>
           </div>

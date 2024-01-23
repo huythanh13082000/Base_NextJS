@@ -10,14 +10,13 @@ const ContactUs = () => {
   return (
     <div className="w-full">
       <div className="relative w-full text-center h-fit pb-20">
-        <div className="absolute -translate-y-[260px]">
+        <div className="absolute -translate-y-[220px]">
           <Image
-              src="images/bg_lightning.svg"
-              alt=""
-              width={1200}
-              height={678}
-              objectFit="contain"
-              className="z-0"
+            src="images/bg_lightning.svg"
+            alt=""
+            width={1200}
+            height={678}
+            className="z-0 object-contain"
           />
         </div>
         <div className="relative">
