@@ -29,16 +29,16 @@ const DialogCustom: React.FC<MyDialogProps> = ({isOpen, onClose, children}) => {
                 alt=''
                 width={60}
                 height={60}
-                className='h-[60px] rounded-[10px]'
+                className='h-[60px] rounded-[10px] mb-4'
               />
               <div>
-                <p className='text-[18px] font-bold text-[white]'>
+                <p className='text-[18px] font-bold text-[white] text-start'>
                   A-BEE[아비] - 앱테크
                 </p>
-                <p className='text-[15px] text-[white] mt-[8px] mb-[16px]'>
+                <p className='text-[15px] text-[white] mt-[8px] mb-[16px] text-start'>
                   Flutter, Node.Js
                 </p>
-                <p>
+                <p className='text-start'>
                   아비는 온 국민들에게 해택을 주기 위해서 만들어진 멀티 리워드
                   광고 플랫폼입니다 투자 시간 대비 낮은 해택으로 목말라있는
                   분들은 아비앱을 경험해보세요 벌광고가 여러분을 기다립니다

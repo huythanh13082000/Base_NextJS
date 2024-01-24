@@ -1,6 +1,7 @@
 'use client'
 
 import CardEstimateCalculation from '@/components/card-estimate-calculation/card-estimate-calculation'
+import DialogEstimate from '@/components/dialog-estimate'
 import {SelectCustom} from '@/components/select-custom'
 import {Button} from '@/components/ui/button'
 import React, {useState} from 'react'
@@ -12,6 +13,7 @@ const containerStyle = {
 
 const EstimatePricing = () => {
   const [tab, setTab] = useState(0)
+  const [open, setOpen] = useState(false)
   return (
     <div className='w-full'>
       <div
@@ -105,7 +107,7 @@ const EstimatePricing = () => {
       </div>
       <div className='flex justify-between items-center py-5'>
         <div>
-          <p className='font-semibold text-sm sm:text-[18px] mb-2'>예상 견적</p>
+          <p className='font-semibold  text-[18px] mb-2'>예상 견적</p>
           <div>
             <span className='bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[18px] sm:text-[28px]'>
               9600
@@ -115,8 +117,9 @@ const EstimatePricing = () => {
             </span>{' '}
           </div>
         </div>
-        <Button>견적 보기</Button>
+        <Button onClick={() => setOpen(true)}>견적 보기</Button>
       </div>
+      <DialogEstimate isOpen={open} onClose={() => setOpen(false)} />
     </div>
   )
 }
