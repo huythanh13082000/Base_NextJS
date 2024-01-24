@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { NavList } from "@/data/nav-list";
 import { usePathname } from "next/navigation";
@@ -16,8 +16,8 @@ const MainNav = () => {
           </span>
           {pathname == nav.href && (
             <motion.div
-              layoutId="pill-tab"
-              transition={{ type: "spring", duration: 1, bounce: 0.2 }}
+              layoutId="underline"
+              transition={{ type: "spring", duration: 1 }}
               className="h-1 bg-gradient-to-t from-[#396FFD] to-[#0744E6] rounded-t-3xl inset-0 z-0 mix-blend-difference"
             ></motion.div>
           )}
