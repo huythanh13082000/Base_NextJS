@@ -18,7 +18,7 @@ const PartnerSession = ({ className }: PartnerSessionProps) => {
       <p className="font-bold text-5xl bg-title text-transparent bg-clip-text mb-[100px]">
         Our Partners Join Force With Us
       </p>
-      <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-y-12 items-center px-7">
+      <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-y-12 items-center px-7 animate-slide hover:[animation-play-state:paused]">
         <div className="relative justify-self-center">
           <Image src="/images/qnb.svg" alt="Car" width={56} height={56} />
         </div>

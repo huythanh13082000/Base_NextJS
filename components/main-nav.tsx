@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { NavList } from "@/data/nav-list";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 const MainNav = () => {
   const pathname = usePathname();
@@ -14,7 +15,11 @@ const MainNav = () => {
             {nav.content}
           </span>
           {pathname == nav.href && (
-            <div className="h-1 bg-gradient-to-t from-[#396FFD] to-[#0744E6] rounded-t-3xl"></div>
+            <motion.div
+              layoutId="pill-tab"
+              transition={{ type: "spring", duration: 1, bounce: 0.2 }}
+              className="h-1 bg-gradient-to-t from-[#396FFD] to-[#0744E6] rounded-t-3xl inset-0 z-0 mix-blend-difference"
+            ></motion.div>
           )}
         </Link>
       ))}

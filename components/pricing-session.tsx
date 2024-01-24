@@ -4,6 +4,7 @@ import CardPricing from "@/components/card-pricing";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 type PricingSessionProps = Pick<
   React.HTMLAttributes<HTMLDivElement>,
@@ -11,7 +12,7 @@ type PricingSessionProps = Pick<
 >;
 const PricingSession = ({ className }: PricingSessionProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.2, once: false });
+  const isInView = useInView(ref, { amount: 0.3, once: false });
   return (
     <section
       ref={ref}
@@ -32,18 +33,24 @@ const PricingSession = ({ className }: PricingSessionProps) => {
         }}
       ></div>
 
-      <div className="mt-[100px] bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a]">
+      <div className="mt-[100px] bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] opacity-0 [.is-visible_&]:opacity-100">
         PRICING
       </div>
-      <p className="font-bold text-5xl bg-title text-transparent bg-clip-text mb-20 translate-y-[40%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
+      <p className="font-bold text-5xl bg-title text-transparent bg-clip-text opacity-0 mb-20 translate-y-[50%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0 [.is-visible_&]:opacity-100">
         Unlock Your Website&#39;s Potential
       </p>
-      <div className="grid gap-8 grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 pb-[150px]">
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        viewport={{ amount: "some", margin: "100% 0% -8% 0%" }}
+        className="grid gap-8 grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 pb-[150px]"
+      >
         <CardPricing />
         <CardPricing />
         <CardPricing />
         <CardPricing />
-      </div>
+      </motion.div>
       <div className="absolute -z-10 w-full h-[600px] bottom-0 translate-y-1/2">
         <Image src="/images/bg_galaxy.svg" alt="Galaxy" fill />
       </div>

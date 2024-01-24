@@ -4,7 +4,7 @@ import { Options } from "@/types/Options";
 
 export default function useOption(type?: string, tag?: string) {
   const { data: tags, error } = useSWR<Options[]>(
-    "/v2/option" +
+    "/v2/option?" +
       new URLSearchParams({
         ...(type ? { type } : {}),
         ...(tag ? { tag } : {}),

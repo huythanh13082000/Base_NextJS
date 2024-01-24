@@ -81,6 +81,14 @@ const config = {
             transform: "scale(0.98)",
           },
         },
+        slide: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(-100%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -95,6 +103,7 @@ const config = {
           "glow-line-vertical var(--animation-duration) ease-in forwards",
         zap: "zap 2250ms calc(var(--index) * 20ms) linear infinite",
         bounce: "240ms ease 0s 1 running bounce",
+        slide: "25s slide infinite linear",
       },
       colors: {
         primary: "var(--primary)",

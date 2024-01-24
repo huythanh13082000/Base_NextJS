@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Card,
@@ -9,16 +10,76 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 
+const CustomCard = motion(Card);
 const CardPricing = () => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.9, 0.9], ["8deg", "-8deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.9, 0.9], ["-8deg", "8deg"]);
+
+  const handleMouseMove: React.MouseEventHandler<HTMLElement> = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const xPct = mouseX / width - 0.9;
+    const yPct = mouseY / height - 0.9;
+
+    x.set(xPct);
+    y.set(yPct);
+    cursorX.set(mouseX);
+    cursorY.set(mouseY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
   return (
-    <Card
-      className="rounded-2xl bg-[#010618] text-white border-[#212a39] text-[14px]"
+    <CustomCard
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="rounded-2xl bg-[#010618] text-white border-[#212a39] text-[14px] cursor-pointer group"
       style={{
         background:
           "radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
+        rotateY,
+        rotateX,
+        transformStyle: "preserve-3d",
       }}
     >
+      <motion.div
+        className="pointer-events-none absolute -inset-px opacity-0 rounded-xl transition duration-300 group-hover:opacity-30"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${cursorX}px ${cursorY}px,
+              #346BFA 0%,
+              rgba(0, 0, 0, 0),
+              transparent 70%
+            )
+          `,
+        }}
+      />
       <CardHeader className="py-6 px-5 gap-2">
         <CardTitle className="font-bold">개발자 아웃소싱</CardTitle>
         <CardDescription className="leading-5 text-[#E1E4EA]">
@@ -58,7 +119,7 @@ const CardPricing = () => {
         </div>
         <Button className="w-full">견적 계산</Button>
       </CardFooter>
-    </Card>
+    </CustomCard>
   );
 };
 
