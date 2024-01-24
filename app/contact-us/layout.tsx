@@ -3,5 +3,9 @@ export default function ContactUsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="lg:px-[80px] px-4 xl:px-24">{children}</div>;
+  return (
+    <div className="px-4 pt-12 pb-[60px] lg:px-11 lg:py-20 xl:px-[252px] xl:pt-[60px] xl:pb-[90px]">
+      {children}
+    </div>
+  );
 }

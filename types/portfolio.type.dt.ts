@@ -1,13 +1,15 @@
 interface PortfolioType {
-  logo?: any
-  title: string
-  programming_language: string
-  description?: string
-  images?: any[] | FormData
-  portfolio_id?: number
+  logo?: any;
+  title: string;
+  programming_language: string;
+  description?: string;
+  images?: any[] | FormData;
+  portfolio_id?: number;
   options: {
-    type: string
-    nameOption: string
-    price: number
-  }[]
+    type: string;
+    nameOption: string;
+    price: number;
+  }[];
+  created_at: Date;
+  updated_at: Date;
 }

@@ -13,8 +13,7 @@ const SiteFooter = () => {
           src='images/bg-footer.svg'
           alt=''
           fill
-          objectFit='cover'
-          className='z-0'
+          className="z-0 object-cover"
         />
         <CustomDivider className='relative mb-[70px]' />
 
