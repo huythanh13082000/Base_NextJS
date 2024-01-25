@@ -10,7 +10,7 @@ const VideoComponent = (props: any, ref: any) => {
       aria-label="Video player"
       muted
       poster="/images/background_video.jpg"
-      className="z-50 shadow-sm rounded-sm"
+      className="z-30 shadow-sm rounded-sm"
     >
       <source
         src="https://gm4-homepage.s3.ap-northeast-2.amazonaws.com/background.mp4"
