@@ -1,14 +1,28 @@
 "use client";
-import React, { CSSProperties, useEffect, useRef, useState } from "react";
+import React, {
+  CSSProperties,
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
+import VideoComponent from "@/components/video-component";
 
 const HeroImage = () => {
   const ref = useRef(null);
+  const videoRef = useRef<any>(null);
   const isInView = useInView(ref, { amount: "all", once: true });
   useEffect(() => {
-    if (!isInView) return;
+    if (videoRef.current) {
+      if (isInView) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
   }, [isInView]);
   return (
     <div
@@ -20,20 +34,23 @@ const HeroImage = () => {
         isInView && "before:animate-image-glow",
       )}
     >
-      <Image
-        src="/images/video.png"
-        alt="Video"
-        fill
-        className={cn(
-          "object-cover transition-opacity delay-[680ms]",
-          isInView ? "opacity-100" : "opacity-50",
-        )}
-      />
-      <div className="absolute w-[108px] h-[108px] p-4 rounded-full border border-white border-opacity-50 cursor-pointer">
-        <div className="w-full h-full rounded-full bg-[#afafaf] flex items-center justify-center">
-          <Image src="/icons/play.svg" alt="play" width={18} height={18} />
-        </div>
-      </div>
+      {/*<Image*/}
+      {/*  src="/images/video.png"*/}
+      {/*  alt="Video"*/}
+      {/*  fill*/}
+      {/*  className={cn(*/}
+      {/*    "object-cover transition-opacity delay-[680ms]",*/}
+      {/*    isInView ? "opacity-100" : "opacity-50",*/}
+      {/*  )}*/}
+      {/*/>*/}
+      {/*<div className="absolute w-[108px] h-[108px] p-4 rounded-full border border-white border-opacity-50 cursor-pointer">*/}
+      {/*  <div className="w-full h-full rounded-full bg-[#afafaf] flex items-center justify-center">*/}
+      {/*    <Image src="/icons/play.svg" alt="play" width={18} height={18} />*/}
+      {/*  </div>*/}
+      {/*</div>*/}
+      <Suspense fallback={<p>Loading video...</p>}>
+        <VideoComponent ref={videoRef} />
+      </Suspense>
     </div>
   );
 };
