@@ -18,9 +18,9 @@ const AboutCategoryLayout = ({ title, listItem }: AboutCategoryProps) => {
               <Image
                 src={item.icon}
                 alt={item.icon}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 fill
                 className="object-contain"
-                sizes="100vw"
               />
             </div>
             <p>{item.name}</p>

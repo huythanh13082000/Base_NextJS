@@ -23,27 +23,27 @@ const PartnerSession = ({ className }: PartnerSessionProps) => {
         <div
           style={{
             background:
-              "linear-gradient(90deg, #010A18, transparent 10%, transparent 90%, #010A18)",
+              "linear-gradient(90deg, #010A18, transparent 30%, transparent 70%, #010A18)",
           }}
           className="absolute inset-0 pointer-events-none z-10"
         ></div>
         <div className="w-[2400px] grid grid-cols-12 items-center animate-slide-left mb-12">
-          {[...ImagePartner, ...ImagePartner].map((item) => (
-            <div key={item} className="relative justify-self-center">
+          {[...ImagePartner, ...ImagePartner].map((item, index) => (
+            <div key={index} className="relative justify-self-center">
               <Image src={item} alt="Car" width={56} height={56} />
             </div>
           ))}
         </div>
         <div className="w-[2400px] grid grid-cols-12 items-center animate-slide-right mb-12">
-          {[...ImagePartner, ...ImagePartner].map((item) => (
-            <div key={item} className="relative justify-self-center">
+          {[...ImagePartner, ...ImagePartner].map((item, index) => (
+            <div key={index} className="relative justify-self-center">
               <Image src={item} alt="Car" width={56} height={56} />
             </div>
           ))}
         </div>
         <div className="w-[2400px] grid grid-cols-12 items-center animate-slide-left">
-          {[...ImagePartner, ...ImagePartner].map((item) => (
-            <div key={item} className="relative justify-self-center">
+          {[...ImagePartner, ...ImagePartner].map((item, index) => (
+            <div key={index} className="relative justify-self-center">
               <Image src={item} alt="Car" width={56} height={56} />
             </div>
           ))}
