@@ -15,9 +15,11 @@ const HeroImage = () => {
   const ref = useRef(null);
   const videoRef = useRef<any>(null);
   const isInView = useInView(ref, { amount: "all", once: true });
+  const [css, setCss] = useState("");
   useEffect(() => {
     if (videoRef.current) {
       if (isInView) {
+        setCss("2xl:h-[970px]");
         videoRef.current.play();
       } else {
         videoRef.current.pause();
@@ -29,6 +31,7 @@ const HeroImage = () => {
       ref={ref}
       className={cn(
         "relative w-full h-[675px] flex items-center justify-center",
+        css,
         isInView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
         "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]",
         isInView && "before:animate-image-glow",
@@ -48,6 +51,7 @@ const HeroImage = () => {
       {/*    <Image src="/icons/play.svg" alt="play" width={18} height={18} />*/}
       {/*  </div>*/}
       {/*</div>*/}
+
       <Suspense fallback={<p>Loading video...</p>}>
         <VideoComponent ref={videoRef} />
       </Suspense>

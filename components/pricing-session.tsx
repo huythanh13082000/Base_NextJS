@@ -16,7 +16,7 @@ const PricingSession = ({ className }: PricingSessionProps) => {
     <section
       ref={ref}
       className={cn(
-        "relative mt-20 flex flex-col items-center gap-4 overflow-hidden",
+        "relative mt-20 2xl:mt-[120px] flex flex-col items-center gap-4 overflow-hidden",
         isInView &&
           "is-visible before:opacity-100 before:[transform:rotate(180deg)_scale(2)]",
         !isInView && "before:rotate-180 before:opacity-40",
