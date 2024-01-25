@@ -3,8 +3,7 @@ import React, { useRef } from "react";
 import CardPricing from "@/components/card-pricing";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { useInView } from "framer-motion";
-import { motion } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 
 type PricingSessionProps = Pick<
   React.HTMLAttributes<HTMLDivElement>,
@@ -12,7 +11,7 @@ type PricingSessionProps = Pick<
 >;
 const PricingSession = ({ className }: PricingSessionProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3, once: false });
+  const isInView = useInView(ref, { amount: 0.1, once: false });
   return (
     <section
       ref={ref}
@@ -26,7 +25,7 @@ const PricingSession = ({ className }: PricingSessionProps) => {
     >
       <div className="absolute top-0 bg-divider w-full h-px"></div>
       <div
-        className="absolute top-0 -translate-y-[40%] w-[70%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
+        className="absolute top-0 -translate-y-[40%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
         style={{
           background:
             "radial-gradient(70.71% 70.71% at 50% 50%, #346BFA 0%, rgba(0, 0, 0, 0.00) 70%)",
@@ -40,7 +39,7 @@ const PricingSession = ({ className }: PricingSessionProps) => {
         Unlock Your Website&#39;s Potential
       </p>
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
+        initial={{ opacity: 0, x: -300 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ amount: "some", margin: "100% 0% -8% 0%" }}
