@@ -14,7 +14,7 @@ const VideoComponent = (props: any, ref: any) => {
       className="z-10 shadow-sm rounded-md"
     >
       <source
-        src="https://gm4-homepage.s3.ap-northeast-2.amazonaws.com/background.mp4"
+        src="https://d1gey57zr11abr.cloudfront.net/background.mp4"
         type="video/mp4"
       />
       Your browser does not support the video tag.
