@@ -32,10 +32,10 @@ const PricingSession = ({ className }: PricingSessionProps) => {
         }}
       ></div>
 
-      <div className="mt-[100px] bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] opacity-0 [.is-visible_&]:opacity-100">
+      <div className="mt-[100px] text-center bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] opacity-0 [.is-visible_&]:opacity-100">
         PRICING
       </div>
-      <p className="font-bold text-5xl bg-title text-transparent bg-clip-text opacity-0 mb-20 translate-y-[50%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0 [.is-visible_&]:opacity-100">
+      <p className="font-bold text-center text-5xl bg-title text-transparent bg-clip-text opacity-0 mb-20 translate-y-[50%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0 [.is-visible_&]:opacity-100">
         Unlock Your Website&#39;s Potential
       </p>
       <motion.div

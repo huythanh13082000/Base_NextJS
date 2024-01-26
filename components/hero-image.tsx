@@ -15,11 +15,10 @@ const HeroImage = () => {
   const ref = useRef(null);
   const videoRef = useRef<any>(null);
   const isInView = useInView(ref, { amount: "all", once: true });
-  const [css, setCss] = useState("");
   useEffect(() => {
     if (videoRef.current) {
       if (isInView) {
-        setCss("2xl:h-[970px]");
+        // setCss("2xl:h-[970px]");
         videoRef.current.play();
       } else {
         videoRef.current.pause();
@@ -30,9 +29,8 @@ const HeroImage = () => {
     <div
       ref={ref}
       className={cn(
-        "relative w-full h-[675px] flex items-center justify-center",
-        css,
-        isInView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
+        "relative w-full h-auto flex items-center justify-center",
+        isInView && "animate-image-rotate",
         "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]",
         isInView && "before:animate-image-glow",
       )}

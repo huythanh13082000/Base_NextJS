@@ -7,12 +7,12 @@ type HeroSessionProps = Pick<React.HTMLAttributes<HTMLDivElement>, "className">;
 const HeroSession = ({ className }: HeroSessionProps) => {
   return (
     <section className={className}>
-      <div className="relative w-full text-center h-[390px]">
+      <div className="relative w-full text-center h-[390px] max-sm:h-auto">
         <Image
           src="icons/bg_hero.svg"
           alt=""
           fill
-          className="z-0 object-cover"
+          className="z-0 object-cover max-sm:hidden"
         />
         <div className="relative flex flex-col items-center">
           <h1 className="pt-16 mb-4 font-bold text-[70px] leading-[80px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
@@ -22,7 +22,7 @@ const HeroSession = ({ className }: HeroSessionProps) => {
             Design, deploy, and test onboarding experiences as easily,
             accurately, and on time as your business wants
           </p>
-          <Button className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] hover:shadow-secondary transition-[shadow,text-shadow] [&_.highlight]:ml-2 group">
+          <Button className="translate-y-[-1rem] mb-12 animate-fade-in opacity-0 [--animation-delay:600ms] hover:shadow-secondary transition-[shadow,text-shadow] [&_.highlight]:ml-2 group">
             <span>Start building</span>
             <span className="w-0 overflow-hidden group-hover:w-[24px] transition-all duration-300 origin-left">
               <Image

@@ -18,13 +18,14 @@ const AboutSession = ({ className }: AboutSessionProps) => {
     <section
       ref={ref}
       className={cn(
-        "relative text-center mt-[160px]",
+        "relative text-center mt-[160px] overflow-hidden",
         isInView &&
           "is-visible before:opacity-100 before:[transform:rotate(180deg)_scale(2)]",
         !isInView && "before:rotate-180 before:opacity-40",
         className,
       )}
     >
+      <div className="absolute top-0 bg-divider w-full h-px"></div>
       <div className="flex justify-center w-full">
         <div
           className="mx-auto absolute top-0 -translate-y-[40%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
@@ -35,7 +36,7 @@ const AboutSession = ({ className }: AboutSessionProps) => {
         ></div>
       </div>
 
-      <div className="bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] mx-auto mb-4 translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
+      <div className="bg-[#0b1421] mt-[160px] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] mx-auto mb-4 translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
         ABOUT US
       </div>
       <p className="font-bold text-5xl bg-title text-transparent bg-clip-text mb-4 translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">

@@ -62,7 +62,7 @@ const PartnerSession = ({ className }: PartnerSessionProps) => {
           ))}
         </div>
       </div>
-      <div className="bg-divider w-full h-px mt-[160px]"></div>
+      {/*<div className="bg-divider w-full h-px mt-[160px]"></div>*/}
     </section>
   );
 };

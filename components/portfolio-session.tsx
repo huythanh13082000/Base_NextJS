@@ -7,7 +7,7 @@ import { useInView, motion } from "framer-motion";
 
 const PortfolioSession = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3, once: false });
+  const isInView = useInView(ref, { amount: 0.1, once: false });
   return (
     <section
       ref={ref}
@@ -18,8 +18,8 @@ const PortfolioSession = () => {
         !isInView && "before:rotate-180 before:opacity-40",
       )}
     >
-      <div className="relative -z-10 flex h-[85px] items-start justify-center overflow-hidden">
-        <div className="h-[400px] w-full scale-x-105 rounded-[30%] border-gray-500 border"></div>
+      <div className="relative -z-10 flex h-[85px] max-sm:h-[45px] items-start justify-center overflow-hidden">
+        <div className="h-[400px] w-full scale-x-105 max-sm:rounded-[35%] max-sm:h-[200px] rounded-[30%] border-gray-500 border"></div>
       </div>
 
       <div className="flex justify-center w-full">
