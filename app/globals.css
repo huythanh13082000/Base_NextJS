@@ -16,3 +16,6 @@
 .bg-input-gradient {
     background: radial-gradient(89.06% 89.06% at 25% 74.32%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 48.41%), linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%), #010718
 }
+.custom-cursor {
+    cursor: url('../public/icons/Pointing.svg'), pointer;
+}

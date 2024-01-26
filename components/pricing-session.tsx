@@ -4,6 +4,7 @@ import CardPricing from "@/components/card-pricing";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useInView, motion } from "framer-motion";
+import { DataPricing } from "@/data/pricing";
 
 type PricingSessionProps = Pick<
   React.HTMLAttributes<HTMLDivElement>,
@@ -43,12 +44,11 @@ const PricingSession = ({ className }: PricingSessionProps) => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ amount: "some", margin: "100% 0% -8% 0%" }}
-        className="grid gap-8 grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 pb-[150px]"
+        className="grid gap-8 grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 pb-[150px] h-full"
       >
-        <CardPricing />
-        <CardPricing />
-        <CardPricing />
-        <CardPricing />
+        {DataPricing.map((price, index) => (
+          <CardPricing key={index} {...price} />
+        ))}
       </motion.div>
       <div className="absolute -z-10 w-full h-[600px] bottom-0 translate-y-1/2">
         <Image src="/images/bg_galaxy.svg" alt="Galaxy" fill />

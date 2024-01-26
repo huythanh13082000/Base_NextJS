@@ -1,25 +1,90 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-
-const containerStyle = {
-  background:
-    "radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
-};
+import {
+  useMotionValue,
+  useSpring,
+  useTransform,
+  motion,
+  useMotionTemplate,
+} from "framer-motion";
 
 const CardPortfolio = (props: {
   data?: PortfolioType;
   onClick?: () => void;
 }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.9, 0.9], ["8deg", "-8deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.9, 0.9], ["-8deg", "8deg"]);
+
+  const containerStyle = {
+    background:
+      "radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
+    rotateY,
+    rotateX,
+    transformStyle: "preserve-3d",
+  };
+
+  const handleMouseMove: React.MouseEventHandler<HTMLElement> = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const xPct = mouseX / width - 0.9;
+    const yPct = mouseY / height - 0.9;
+
+    x.set(xPct);
+    y.set(yPct);
+    cursorX.set(mouseX);
+    cursorY.set(mouseY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
   return (
     <div
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 p-[16px] md:p-[12px] lg:p-[16px]"
       onClick={() => props.onClick && props.onClick()}
     >
-      <div
-        style={containerStyle}
-        className="p-[32px] border-[#1e2736] border-[1px] rounded-[16px]"
+      <motion.div
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          background:
+            "radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
+          rotateY,
+          rotateX,
+          transformStyle: "preserve-3d",
+        }}
+        className="relative p-[32px] border-[#1e2736] border-[1px] rounded-[16px] custom-cursor group"
       >
+        <motion.div
+          className="pointer-events-none absolute -inset-px opacity-0 rounded-xl transition duration-300 group-hover:opacity-30"
+          style={{
+            background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${cursorX}px ${cursorY}px,
+              #346BFA 0%,
+              rgba(0, 0, 0, 0),
+              transparent 70%
+            )
+          `,
+          }}
+        />
         <div className="relative">
           <Image
             src={
@@ -70,11 +135,11 @@ const CardPortfolio = (props: {
           플랫폼입니다 투자 시간 대비 낮은 해택으로 목말라있는 분들은 아비앱을
           경험해보세요 벌광고가 여러분을 기다립니다
         </p>
-        <button className="flex gap-[4px] bg-gradient-to-r from-blue-500 to-blue-900 text-transparent bg-clip-text font-bold text-[14px]">
+        <button className="flex gap-[4px] bg-gradient-to-r from-blue-500 to-blue-900 text-transparent bg-clip-text font-bold text-[14px] custom-cursor">
           View Detail{" "}
           <Image src={"/icons/icon_right.svg"} alt="" width={24} height={24} />
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -111,8 +111,8 @@ const config = {
           "glow-line-vertical var(--animation-duration) ease-in forwards",
         zap: "zap 2250ms calc(var(--index) * 20ms) linear infinite",
         bounce: "240ms ease 0s 1 running bounce",
-        "slide-left": "15s slide-left infinite linear",
-        "slide-right": "15s slide-right infinite linear",
+        "slide-left": "20s slide-left infinite linear",
+        "slide-right": "20s slide-right infinite linear",
       },
       colors: {
         primary: "var(--primary)",
