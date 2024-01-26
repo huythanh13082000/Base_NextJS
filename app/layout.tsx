@@ -80,13 +80,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen max-w-[1440px] mx-auto bg-background font-sans",
-          inter.className,
-        )}
+        className={cn("min-h-screen bg-background font-sans", inter.className)}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative flex min-h-screen flex-col">
+          <div className="relative max-w-[1440px] mx-auto flex min-h-screen flex-col">
             <SiteHeader />
             <div className="flex-1 lg:pt-12">{children}</div>
             <SiteFooter />
