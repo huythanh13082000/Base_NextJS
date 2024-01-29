@@ -15,14 +15,16 @@ const About = () => {
         className="text-center lg:leading-[60px] p-[30px] leading-[30px] lg:mb-[40px]"
         style={containerStyle}
       >
-        <h1 className="lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px]">
+        <h1 className="lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
           About Us
         </h1>
-        <p className="text-[14px] lg:text-[18px]">
+        <p className="text-[14px] lg:text-[18px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
           Learn more about us - download our PDF now!
         </p>
         <a href="">
-          <Button>Download PDF</Button>
+          <Button className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
+            Download PDF
+          </Button>
         </a>
       </div>
       {abouts &&
