@@ -15,10 +15,10 @@ const HeroSession = ({ className }: HeroSessionProps) => {
           className="z-0 object-cover max-sm:hidden"
         />
         <div className="relative flex flex-col items-center">
-          <h1 className="pt-16 mb-4 font-bold text-[70px] leading-[80px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+          <h1 className="pt-16 mb-4 font-bold xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
             Product Adoption Made Easy
           </h1>
-          <p className="max-w-[720px] mb-8 text-[20px] leading-[28px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
+          <p className="max-w-[720px] mb-8 xl:text-[20px] xl:leading-[28px] lg:text-[18px] lg:leading-[26px] text-[14px] leading-[20px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
             Design, deploy, and test onboarding experiences as easily,
             accurately, and on time as your business wants
           </p>

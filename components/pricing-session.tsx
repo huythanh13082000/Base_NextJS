@@ -26,17 +26,17 @@ const PricingSession = ({ className }: PricingSessionProps) => {
     >
       <div className="absolute top-0 bg-divider w-full h-px"></div>
       <div
-        className="absolute top-0 -translate-y-[40%] max-md:-translate-y-[10%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
+        className="absolute top-0 -translate-y-[40%] max-md:-translate-y-[5%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
         style={{
           background:
             "radial-gradient(70.71% 70.71% at 50% 50%, #346BFA 0%, rgba(0, 0, 0, 0.00) 70%)",
         }}
       ></div>
 
-      <div className="mt-[100px] text-center bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] opacity-0 [.is-visible_&]:opacity-100">
+      <div className="lg:mt-20 mt-[52px] text-center bg-[#0b1421] max-w-fit py-1 px-4 rounded-full font-medium border border-[#151d2a] opacity-0 [.is-visible_&]:opacity-100">
         PRICING
       </div>
-      <p className="font-bold text-center text-5xl bg-title text-transparent bg-clip-text opacity-0 mb-20 translate-y-[50%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0 [.is-visible_&]:opacity-100">
+      <p className="font-bold text-center xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] bg-title text-transparent bg-clip-text opacity-0 mb-20 translate-y-[50%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0 [.is-visible_&]:opacity-100">
         Unlock Your Website&#39;s Potential
       </p>
       <motion.div

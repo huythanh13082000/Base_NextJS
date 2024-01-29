@@ -29,7 +29,7 @@ const PartnerSession = ({ className }: PartnerSessionProps) => {
       <div className="bg-[#111e3a] max-w-fit py-1 px-4 rounded-full font-medium border border-[#1b2947] mx-auto mt-[86px] mb-4 translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
         PARTNERS
       </div>
-      <p className="font-bold text-5xl bg-title text-transparent bg-clip-text mb-[100px] translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
+      <p className="font-bold xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] bg-title text-transparent bg-clip-text mb-[100px] translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
         Our Partners Join Force With Us
       </p>
       <div className="relative w-full overflow-hidden mx-auto">
