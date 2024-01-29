@@ -22,5 +22,6 @@ const VideoComponent = React.forwardRef<Ref, any>((props, ref) => {
     </video>
   );
 });
+VideoComponent.displayName = "VideoComponent";
 
 export default VideoComponent;
