@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
+type Ref = HTMLVideoElement;
 
-const VideoComponent = (props: any, ref: any) => {
+const VideoComponent = React.forwardRef<Ref, any>((props, ref) => {
   return (
     <video
       id="video"
@@ -20,6 +21,6 @@ const VideoComponent = (props: any, ref: any) => {
       Your browser does not support the video tag.
     </video>
   );
-};
+});
 
-export default React.forwardRef(VideoComponent);
+export default VideoComponent;

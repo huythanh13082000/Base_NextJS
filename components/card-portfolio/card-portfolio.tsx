@@ -8,53 +8,20 @@ import {
   motion,
   useMotionTemplate,
 } from "framer-motion";
+import useLinearCard from "@/lib/linear-card";
 
 const CardPortfolio = (props: {
   data?: PortfolioType;
   onClick?: () => void;
 }) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.9, 0.9], ["8deg", "-8deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.9, 0.9], ["-8deg", "8deg"]);
-
-  const containerStyle = {
-    background:
-      "radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
+  const {
+    handleMouseMove,
+    handleMouseLeave,
     rotateY,
     rotateX,
-    transformStyle: "preserve-3d",
-  };
-
-  const handleMouseMove: React.MouseEventHandler<HTMLElement> = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.9;
-    const yPct = mouseY / height - 0.9;
-
-    x.set(xPct);
-    y.set(yPct);
-    cursorX.set(mouseX);
-    cursorY.set(mouseY);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
+    cursorY,
+    cursorX,
+  } = useLinearCard();
   return (
     <div
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 p-[16px] md:p-[12px] lg:p-[16px]"
