@@ -10,7 +10,7 @@ const containerStyle = {
 };
 
 const Portfolio = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState<PortfolioType>();
   const [open, setOpen] = useState(false);
   const { portfolios, loading, error } = usePortfolio();
   return (
@@ -27,12 +27,26 @@ const Portfolio = () => {
         </p>
       </div>
       <div className="flex flex-wrap -mx-4 mb-[3rem]">
-        <CardPortfolio onClick={() => setOpen(true)} />
-        <CardPortfolio onClick={() => setOpen(true)} />
-        <CardPortfolio onClick={() => setOpen(true)} />
-        <CardPortfolio onClick={() => setOpen(true)} />
+        {portfolios &&
+          portfolios.data.map((portfolio, index) => (
+            <CardPortfolio
+              data={portfolio}
+              key={index}
+              onClick={() => {
+                setData(portfolio);
+                setOpen(true);
+              }}
+            />
+          ))}
       </div>
-      <DialogCustom onClose={() => setOpen(false)} isOpen={open} />
+      <DialogCustom
+        data={data}
+        onClose={() => {
+          setData(undefined);
+          setOpen(false);
+        }}
+        isOpen={open}
+      />
     </div>
   );
 };

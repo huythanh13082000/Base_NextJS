@@ -21,7 +21,10 @@ const About = () => {
         <p className="text-[14px] lg:text-[18px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
           Learn more about us - download our PDF now!
         </p>
-        <a href="">
+        <a
+          href="https://d1gey57zr11abr.cloudfront.net/GM4Portfolio.pdf"
+          target="_blank"
+        >
           <Button className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
             Download PDF
           </Button>

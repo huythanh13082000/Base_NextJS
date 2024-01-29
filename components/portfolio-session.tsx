@@ -4,10 +4,14 @@ import CardPortfolio from "@/components/card-portfolio/card-portfolio";
 import Image from "next/image";
 import { cn, fetcher } from "@/lib/utils";
 import { useInView, motion } from "framer-motion";
+import usePortfolio from "@/lib/use-portfolio";
+import { useRouter } from "next/navigation";
 
 const PortfolioSession = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: false });
+  const { portfolios, loading, error } = usePortfolio();
+  const router = useRouter();
   return (
     <section
       ref={ref}
@@ -49,14 +53,14 @@ const PortfolioSession = () => {
           viewport={{ amount: "some", margin: "100% 0% -8% 0%" }}
           className=" flex flex-wrap mb-5 -mx-4"
         >
-          <CardPortfolio />
-          <CardPortfolio />
-          <CardPortfolio />
-          <CardPortfolio />
-          <CardPortfolio />
-          <CardPortfolio />
-          <CardPortfolio />
-          <CardPortfolio />
+          {portfolios &&
+            portfolios.data.map((portfolio, index) => (
+              <CardPortfolio
+                data={portfolio}
+                key={index}
+                onClick={() => router.push(`portfolio`)}
+              />
+            ))}
         </motion.div>
       </div>
       <div className="relative -z-10 flex h-[85px] max-sm:h-[45px]  items-end justify-center overflow-hidden">

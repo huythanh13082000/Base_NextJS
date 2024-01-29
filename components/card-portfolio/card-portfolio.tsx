@@ -70,7 +70,7 @@ const CardPortfolio = (props: {
           rotateX,
           transformStyle: "preserve-3d",
         }}
-        className="relative p-[32px] border-[#1e2736] border-[1px] rounded-[16px] custom-cursor group"
+        className="relative flex flex-col h-full p-[32px] border-[#1e2736] border-[1px] rounded-[16px] custom-cursor group"
       >
         <motion.div
           className="pointer-events-none absolute -inset-px opacity-0 rounded-xl transition duration-300 group-hover:opacity-30"
@@ -87,9 +87,7 @@ const CardPortfolio = (props: {
         />
         <div className="relative">
           <Image
-            src={
-              "https://www.elle.vn/wp-content/uploads/2017/07/25/hinh-anh-dep-1.jpg"
-            }
+            src={`${process.env.NEXT_PUBLIC_BASE_URL}/${props.data?.logo}`}
             alt=""
             objectFit="cover"
             layout="cover"
@@ -127,15 +125,13 @@ const CardPortfolio = (props: {
           />
         </div>
         <p className="text-[18px] font-bold mt-[24px] mb-[12px] text-start">
-          A-BEE[아비] - 앱테크
+          {props.data?.title}
         </p>
-        <p className="text-[15px]">Flutter, Node.Js</p>
+        <p className="text-[15px]">{props.data?.programming_language}</p>
         <p className="text-[#98A1B6] mt-[8px] mb-[12px]">
-          아비는 온 국민들에게 해택을 주기 위해서 만들어진 멀티 리워드 광고
-          플랫폼입니다 투자 시간 대비 낮은 해택으로 목말라있는 분들은 아비앱을
-          경험해보세요 벌광고가 여러분을 기다립니다
+          {props.data?.description}
         </p>
-        <button className="flex gap-[4px] bg-gradient-to-r from-blue-500 to-blue-900 text-transparent bg-clip-text font-bold text-[14px] custom-cursor">
+        <button className="mt-auto flex gap-[4px] bg-gradient-to-r from-blue-500 to-blue-900 text-transparent bg-clip-text font-bold text-[14px] custom-cursor">
           View Detail{" "}
           <Image src={"/icons/icon_right.svg"} alt="" width={24} height={24} />
         </button>
