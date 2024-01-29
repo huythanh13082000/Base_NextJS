@@ -101,14 +101,14 @@ const FormContact = () => {
                           Array.from(files).map((file, index) => {
                             const objectUrl = URL.createObjectURL(file);
                             return (
-                                <div key={index} className='relative w-6 h-6'>
-                                    <Image
-                                        src={objectUrl}
-                                        fill
-                                        alt={`Preview Image ${index}`}
-                                        className="rounded-full h-auto w-auto object-cover border"
-                                    />
-                                </div>
+                              <div key={index} className="relative w-6 h-6">
+                                <Image
+                                  src={objectUrl}
+                                  fill
+                                  alt={`Preview Image ${index}`}
+                                  className="rounded-full h-auto w-auto object-cover border"
+                                />
+                              </div>
                             );
                           })}
                       </div>
@@ -206,12 +206,12 @@ const FormContact = () => {
             <p className="text-sm font-medium text-[#D2D0DD] mb-3">
               출시 플랫폼
             </p>
-            <div className="flex gap-[40%] items-center">
+            <div className="flex items-center">
               <FormField
                 control={form.control}
                 name="mobile"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex-1">
                     <div className="flex items-center gap-2">
                       <FormControl>
                         <Checkbox
@@ -232,7 +232,7 @@ const FormContact = () => {
                 control={form.control}
                 name="web"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex-1">
                     <div className="flex items-center gap-2">
                       <FormControl>
                         <Checkbox
@@ -277,7 +277,7 @@ const FormContact = () => {
           />
 
           {/* companyName and position  */}
-          <div className="flex gap-8 justify-center">
+          <div className="flex max-md:flex-col gap-8 justify-center">
             {/* companyName*/}
             <div className="w-full">
               <FormField
@@ -331,7 +331,7 @@ const FormContact = () => {
           </div>
 
           {/* email and phone  */}
-          <div className="flex gap-8 justify-center">
+          <div className="flex max-md:flex-col gap-8 justify-center">
             {/* email*/}
             <div className="w-full">
               <FormField

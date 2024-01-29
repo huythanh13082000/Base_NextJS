@@ -24,7 +24,7 @@ const PortfolioSession = () => {
 
       <div className="flex justify-center w-full">
         <div
-          className="mx-auto absolute top-0 -translate-y-[40%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
+          className="mx-auto absolute top-0 -translate-y-[40%] max-md:-translate-y-[10%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
           style={{
             background:
               "radial-gradient(70.71% 70.71% at 50% 50%, #346BFA 0%, rgba(0, 0, 0, 0.00) 70%)",
@@ -32,7 +32,7 @@ const PortfolioSession = () => {
         ></div>
       </div>
 
-      <div className="relative px-[96px] z-10 h-full w-full text-white text-center">
+      <div className="relative px-4 lg:px-20 xl:px-[96px] z-10 h-full w-full text-white text-center">
         <div className="bg-[#0b1421] max-w-fit mx-auto py-1 px-4 rounded-full font-medium border border-[#151d2a] mb-4">
           PORTFOLIO
         </div>
@@ -47,7 +47,7 @@ const PortfolioSession = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ amount: "some", margin: "100% 0% -8% 0%" }}
-          className="flex flex-wrap mb-5"
+          className=" flex flex-wrap mb-5 -mx-4"
         >
           <CardPortfolio />
           <CardPortfolio />
@@ -59,8 +59,8 @@ const PortfolioSession = () => {
           <CardPortfolio />
         </motion.div>
       </div>
-      <div className="relative -z-10 flex h-[85px] items-end justify-center overflow-hidden">
-        <div className="h-[400px] w-full scale-x-105 rounded-[30%] border-gray-500 border"></div>
+      <div className="relative -z-10 flex h-[85px] max-sm:h-[45px]  items-end justify-center overflow-hidden">
+        <div className="h-[400px] w-full scale-x-105 rounded-[30%] max-sm:rounded-[35%] max-sm:h-[200px] border-gray-500 border"></div>
       </div>
     </section>
   );

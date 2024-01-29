@@ -18,7 +18,6 @@ const HeroImage = () => {
   useEffect(() => {
     if (videoRef.current) {
       if (isInView) {
-        // setCss("2xl:h-[970px]");
         videoRef.current.play();
       } else {
         videoRef.current.pause();
@@ -49,6 +48,7 @@ const HeroImage = () => {
       {/*    <Image src="/icons/play.svg" alt="play" width={18} height={18} />*/}
       {/*  </div>*/}
       {/*</div>*/}
+      {/*<div className="h-[500px]"></div>*/}
 
       <Suspense fallback={<p>Loading video...</p>}>
         <VideoComponent ref={videoRef} />

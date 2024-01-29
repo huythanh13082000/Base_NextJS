@@ -26,7 +26,7 @@ const PricingSession = ({ className }: PricingSessionProps) => {
     >
       <div className="absolute top-0 bg-divider w-full h-px"></div>
       <div
-        className="absolute top-0 -translate-y-[40%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
+        className="absolute top-0 -translate-y-[40%] max-md:-translate-y-[10%] w-[70%] max-md:w-[120%] aspect-[2/1] opacity-30 transition-all duration-1000 scale-x-0 [.is-visible_&]:scale-x-100"
         style={{
           background:
             "radial-gradient(70.71% 70.71% at 50% 50%, #346BFA 0%, rgba(0, 0, 0, 0.00) 70%)",
