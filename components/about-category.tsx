@@ -8,7 +8,7 @@ interface AboutCategoryProps {
 const AboutCategoryLayout = ({ title, listItem }: AboutCategoryProps) => {
   return (
     <div className="flex max-lg:flex-col lg:gap-0 md:gap-6 gap-5 max-lg:items-start">
-      <p className="bg-title text-left lg:w-[175px] text-transparent bg-clip-text">
+      <p className="bg-title text-left lg:w-[175px] text-transparent bg-clip-text font-bold text-[18px] leading-7 lg:text-[20px] xl:text-[26px] lg:leading-8">
         {title}
       </p>
       <div className="flex flex-1 flex-wrap gap-[58px] max-lg:gap-12 max-md:gap-8 items-center">

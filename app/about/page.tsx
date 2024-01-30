@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import useAbout from "@/lib/use-about";
+import Loading from "@/components/loading";
 const containerStyle = {
   background:
     "radial-gradient(33.21% 54.43% at 50% 50%, #0e1d42 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
@@ -30,6 +31,11 @@ const About = () => {
           </Button>
         </a>
       </div>
+      {loading && (
+        <div className="w-1/4 mx-auto h-fit flex justify-center items-center">
+          <Loading />
+        </div>
+      )}
       {abouts &&
         abouts.map((img) => (
           <div key={img}>

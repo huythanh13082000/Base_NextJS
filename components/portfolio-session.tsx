@@ -23,7 +23,7 @@ const PortfolioSession = () => {
       )}
     >
       <div className="relative -z-10 flex h-[85px] max-sm:h-[45px] items-start justify-center overflow-hidden">
-        <div className="h-[400px] w-full scale-x-105 max-sm:rounded-[35%] max-sm:h-[200px] rounded-[30%] border-gray-500 border"></div>
+        <div className="h-[400px] w-full scale-x-105 max-sm:rounded-[35%] max-sm:h-[200px] rounded-[30%] border-[#4A546E] border border-opacity-40"></div>
       </div>
 
       <div className="flex justify-center w-full">
@@ -64,7 +64,7 @@ const PortfolioSession = () => {
         </motion.div>
       </div>
       <div className="relative -z-10 flex h-[85px] max-sm:h-[45px]  items-end justify-center overflow-hidden">
-        <div className="h-[400px] w-full scale-x-105 rounded-[30%] max-sm:rounded-[35%] max-sm:h-[200px] border-gray-500 border"></div>
+        <div className="h-[400px] w-full scale-x-105 rounded-[30%] max-sm:rounded-[35%] max-sm:h-[200px] border-[#4A546E] border border-opacity-40"></div>
       </div>
     </section>
   );

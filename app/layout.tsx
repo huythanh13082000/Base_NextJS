@@ -70,6 +70,12 @@ export const metadata: Metadata = {
     images: "/images/avatar.png",
     emails: ["gm4-korea@greenapps.kr"],
   },
+  verification: {
+    google: "zCJKMTjIx6zbmyuEaj_dFMKnqzKvxLYvloDXuP83nRA",
+    // other: {
+    //   "naver-site-verification": "zCJKMTjIx6zbmyuEaj_dFMKnqzKvxLYvloDXuP83nRA",
+    // },
+  },
 };
 
 export default function RootLayout({

@@ -39,7 +39,7 @@ const Menu: React.FC<MyMenuProps> = ({ isOpen, onClose, children }) => {
                   width={36}
                   height={36}
                 />
-                <span className="text-[white]">GM4 Company</span>
+                <span className="text-[white] font-bold">GM4 Company</span>
               </div>
               <span></span>
             </SheetTitle>

@@ -98,6 +98,20 @@ const config = {
             transform: "translateX(-50%)",
           },
         },
+        "pulse-call": {
+          "0%": {
+            "box-shadow": "0 0 0 0 rgba(2,143,227,.7)",
+            transform: "scale(.95)",
+          },
+          "70%": {
+            "box-shadow": "0 0 0 10px rgba(2,143,227,0)",
+            transform: "scale(1)",
+          },
+          "100%": {
+            "box-shadow": "0 0 0 0 rgba(2,143,227,0)",
+            transform: "scale(.95)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -114,6 +128,7 @@ const config = {
         bounce: "240ms ease 0s 1 running bounce",
         "slide-left": "20s slide-left infinite linear",
         "slide-right": "20s slide-right infinite linear",
+        "pulse-call": "2s pulse-call infinite",
       },
       colors: {
         primary: "var(--primary)",

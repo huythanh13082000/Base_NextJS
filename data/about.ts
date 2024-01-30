@@ -4,6 +4,14 @@ export const Language: Array<{ name: string; icon: string }> = [
     icon: "/images/Java.png",
   },
   {
+    name: "Golang",
+    icon: "/images/Go.png",
+  },
+  {
+    name: "C++",
+    icon: "/images/CPlusPlus.png",
+  },
+  {
     name: "C#",
     icon: "/images/CSharp.png",
   },
@@ -31,6 +39,14 @@ export const Language: Array<{ name: string; icon: string }> = [
     name: "Ruby",
     icon: "/images/Ruby.png",
   },
+  {
+    name: "Objective-c",
+    icon: "/images/Object_C.png",
+  },
+  {
+    name: "TypeScript",
+    icon: "/images/Typescript.png",
+  },
 ];
 
 export const Framework: Array<{ name: string; icon: string }> = [
@@ -43,20 +59,40 @@ export const Framework: Array<{ name: string; icon: string }> = [
     icon: "/images/NodeJs.png",
   },
   {
-    name: "Golang",
-    icon: "/images/Go.png",
-  },
-  {
-    name: "C++",
-    icon: "/images/CPlusPlus.png",
-  },
-  {
     name: "Sass",
     icon: "/images/Sass.png",
   },
   {
     name: "Flutter",
     icon: "/images/Flutter.png",
+  },
+  {
+    name: "Unity3D",
+    icon: "/images/Unity.png",
+  },
+  {
+    name: "Angular",
+    icon: "/images/Angular.png",
+  },
+  {
+    name: "Spring",
+    icon: "/images/Spring.png",
+  },
+  {
+    name: "Laravel",
+    icon: "/images/Laravel.png",
+  },
+  {
+    name: "Lumen",
+    icon: "/images/Lumen.png",
+  },
+  {
+    name: "Wordpress",
+    icon: "/images/Wordpress.png",
+  },
+  {
+    name: "Vue",
+    icon: "/images/Vue.png",
   },
 ];
 
@@ -72,6 +108,22 @@ export const Database: Array<{ name: string; icon: string }> = [
   {
     name: "MariaDB",
     icon: "/images/MariaDB.png",
+  },
+  {
+    name: "MicrosoftSQL",
+    icon: "/images/SqlServer.png",
+  },
+  {
+    name: "DynamoDB",
+    icon: "/images/DynamoDB.png",
+  },
+  {
+    name: "Oracle",
+    icon: "/images/OracleDB.png",
+  },
+  {
+    name: "MongoDB",
+    icon: "/images/MongoDB.png",
   },
 ];
 

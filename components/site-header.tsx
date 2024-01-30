@@ -20,7 +20,9 @@ const SiteHeader = () => {
             <AvatarImage src="/images/logo_new_header.png" alt="Logo" />
             <AvatarFallback>GM4</AvatarFallback>
           </Avatar>
-          <span className="text-[22px] leading-[120%]">GM4 Company</span>
+          <span className="text-[22px] leading-[120%] font-bold">
+            GM4 Company
+          </span>
         </div>
         <MainNav />
         <Menu />

@@ -16,96 +16,98 @@ const EstimatePricing = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="w-full">
-      <div
-        className="text-center lg:leading-[50px] p-[30px] leading-[30px]"
-        style={containerStyle}
-      >
-        <h1 className="lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-          Estimate Calculation
-        </h1>
-        <p className="text-[14px] lg:text-[18px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
-          프로젝트 착수시 상세 개발 견적을 받을 수 있습니다 담당 개발자가
-          배정되어 빠르게 개 발이 진행됩니다
-        </p>
-      </div>
-      <div className="flex flex-col xl:gap-[72px] xl:py-[60px] xl:flex-row md:gap-[60px]">
-        <div className="xl:border-[#1e2736] xl:border-[1px] xl:rounded-[16px] xl:w-fit xl:py-[16px] xl:h-fit hidden xl:inline-block">
-          <p
-            className={`px-[32px] py-3 w-[238px] ${
-              tab === 0 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-            }`}
-            onClick={() => setTab(0)}
-          >
-            UI/UX 디자인
-          </p>
-          <p
-            className={`px-[32px] py-3 ${
-              tab === 1 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-            }`}
-            onClick={() => {
-              console.log(8888);
-              setTab(1);
-            }}
-          >
-            APP 개발
+      <div className="lg:px-[80px] px-4 xl:px-24">
+        <div
+          className="text-center lg:leading-[50px] p-[30px] leading-[30px]"
+          style={containerStyle}
+        >
+          <h1 className="lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+            Estimate Calculation
+          </h1>
+          <p className="text-[14px] lg:text-[18px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
+            프로젝트 착수시 상세 개발 견적을 받을 수 있습니다 담당 개발자가
+            배정되어 빠르게 개 발이 진행됩니다
           </p>
         </div>
-        <div className="xl:hidden md:flex hidden md:gap-6">
-          <p
-            className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
-              tab === 0 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-            }`}
-            onClick={() => {
-              setTab(0);
-            }}
-          >
-            UI/UX 디자인
-          </p>
-          <p
-            className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
-              tab === 1 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-            }`}
-            onClick={() => {
-              setTab(1);
-            }}
-          >
-            APP 개발
-          </p>
-        </div>
-        <div className="w-full xl:hidden md:hidden lg:hidden mb-10">
-          <SelectCustom />
-        </div>
-        <div className="flex flex-col gap-10 ">
-          <div>
-            <label htmlFor="" className="mb-6 flex text-[20px] font-bold">
-              슬뎃놈
-            </label>
-            <div className="flex gap-6 flex-wrap">
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-            </div>
+        <div className="flex flex-col xl:gap-[70px] xl:py-[60px] xl:flex-row md:gap-[60px]">
+          <div className="xl:border-[#1e2736] xl:border-[1px] xl:rounded-[16px] xl:w-fit xl:py-[16px] xl:h-fit hidden xl:inline-block">
+            <p
+              className={`px-[32px] py-3 w-[230px] ${
+                tab === 0 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
+              }`}
+              onClick={() => setTab(0)}
+            >
+              UI/UX 디자인
+            </p>
+            <p
+              className={`px-[32px] py-3 ${
+                tab === 1 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
+              }`}
+              onClick={() => {
+                console.log(8888);
+                setTab(1);
+              }}
+            >
+              APP 개발
+            </p>
           </div>
+          <div className="xl:hidden md:flex hidden md:gap-6">
+            <p
+              className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
+                tab === 0 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
+              }`}
+              onClick={() => {
+                setTab(0);
+              }}
+            >
+              UI/UX 디자인
+            </p>
+            <p
+              className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
+                tab === 1 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
+              }`}
+              onClick={() => {
+                setTab(1);
+              }}
+            >
+              APP 개발
+            </p>
+          </div>
+          <div className="w-full xl:hidden md:hidden lg:hidden mb-10">
+            <SelectCustom />
+          </div>
+          <div className="flex flex-col gap-10 ">
+            <div>
+              <label htmlFor="" className="mb-6 flex text-[20px] font-bold">
+                슬뎃놈
+              </label>
+              <div className="flex gap-6 flex-wrap">
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+              </div>
+            </div>
 
-          <div>
-            <label htmlFor="" className="mb-6 flex text-[20px] font-bold">
-              구현할 페이지 분량
-            </label>
-            <div className="flex gap-6 flex-wrap">
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
-              <CardEstimateCalculation />
+            <div>
+              <label htmlFor="" className="mb-6 flex text-[20px] font-bold">
+                구현할 페이지 분량
+              </label>
+              <div className="flex gap-6 flex-wrap">
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+                <CardEstimateCalculation />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center py-5">
+      <div className="sticky bottom-0 w-full z-50 bg-[#08090F] lg:px-[80px] px-4 xl:px-24 flex justify-between items-center py-5">
         <div>
           <p className="font-semibold  text-[18px] mb-2">예상 견적</p>
           <div>

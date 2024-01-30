@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import useLinearCard from "@/lib/linear-card";
 import { motion, useMotionTemplate } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const CardEstimateCalculation = () => {
   const [state, setState] = useState<"unchecked" | "checked">("unchecked");
@@ -19,8 +20,6 @@ const CardEstimateCalculation = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        background:
-          "radial-gradient(33.21% 54.43% at 50% 50%, rgba(102, 172, 255, 0.05) 0%, rgba(102, 117, 255, 0.00) 100%), #010618",
         rotateY,
         rotateX,
         transformStyle: "preserve-3d",
@@ -33,7 +32,11 @@ const CardEstimateCalculation = () => {
           return "checked";
         })
       }
-      className="lg:w-[294px] border-[#1e2736] border-[1px] rounded-[16px] p-[24px] w-full md:w-[294px] group custom-cursor"
+      className={cn(
+        "lg:w-[294px] border-[#1e2736] border-[1px] rounded-[16px] p-6 w-full md:w-[294px] group custom-cursor",
+        state === "checked" &&
+          "bg-gradient-to-b from-[#A3ACC233] from-0% to-[#A3ACC20B] to-100%",
+      )}
     >
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 rounded-xl transition duration-300 group-hover:opacity-30"
