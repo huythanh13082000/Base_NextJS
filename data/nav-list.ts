@@ -2,7 +2,7 @@ import { Navbar } from "@/types/navbar";
 
 export const NavList: Array<Navbar> = [
   {
-    content: "안식처",
+    content: "홈 화면",
     href: "/",
   },
   {

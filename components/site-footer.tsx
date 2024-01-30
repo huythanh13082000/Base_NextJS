@@ -7,6 +7,7 @@ import CopyrightBanner from "./copyright-banner";
 import LocationSVG from "@/public/icons/location.svg";
 import CallSVG from "@/public/icons/call-incoming.svg";
 import SmsSVG from "@/public/icons/sms.svg";
+import Link from "next/link";
 
 const SiteFooter = () => {
   return (
@@ -41,11 +42,11 @@ const SiteFooter = () => {
             <div className="flex gap-2 items-center hover:text-[#1A55EF] group">
               <LocationSVG className="group-hover:fill-[#1A55EF]" />
               <a
-                href="https://maps.app.goo.gl/SUL5Muhkd1QzEJqz7"
+                href="https://maps.app.goo.gl/Jn4T6LfY7ZJtPbpB8"
                 target="_blank"
                 className="group-hover:underline"
               >
-                서울특별시 강남구 선릉로 704 10층 652호
+                서울특별시 강남구 선릉로 664 건설빌딩 205-1호
               </a>
             </div>
             <div className="flex gap-2 items-center hover:text-[#1A55EF] group">
@@ -67,11 +68,11 @@ const SiteFooter = () => {
           <div className="flex flex-1 gap-20 lg:gap-0 lg:justify-between">
             <div className="flex flex-col gap-4 text-[14px] text-span font-medium">
               <p className="mb-2 font-bold text-[#E8E7EE]">메뉴</p>
-              <p>안식처</p>
-              <p>회사소개</p>
-              <p>포트폴리오</p>
-              <p>견적계산</p>
-              <p>문의</p>
+              <Link href="/">홈</Link>
+              <Link href="/about">회사소개</Link>
+              <Link href="/portfolio">포트폴리오</Link>
+              <Link href="/estimate-pricing">견적계산</Link>
+              <Link href="/contact-us">문의</Link>
             </div>
             <div className="flex flex-col gap-4 text-[14px] text-span font-medium">
               <p className="mb-2 font-bold text-[#E8E7EE]">서비스 정책</p>
