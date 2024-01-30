@@ -1,10 +1,12 @@
 "use client";
 
-import CardEstimateCalculation from "@/components/card-estimate-calculation/card-estimate-calculation";
 import DialogEstimate from "@/components/dialog-estimate";
 import { SelectCustom } from "@/components/select-custom";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
+import useTags from "@/lib/use-tag";
+import useType from "@/lib/use-type";
+import ListOptions from "@/components/list-options";
 
 const containerStyle = {
   background:
@@ -14,6 +16,10 @@ const containerStyle = {
 const EstimatePricing = () => {
   const [tab, setTab] = useState(0);
   const [open, setOpen] = useState(false);
+  const [type, setType] = useState<string>("UI/UX 디자인");
+  const [tag, setTag] = useState<string>("UI_PAGE");
+  const { tags } = useTags(type);
+  const { types } = useType();
   return (
     <div className="w-full">
       <div className="lg:px-[80px] px-4 xl:px-24">
@@ -31,25 +37,20 @@ const EstimatePricing = () => {
         </div>
         <div className="flex flex-col xl:gap-[70px] xl:py-[60px] xl:flex-row md:gap-[60px]">
           <div className="xl:border-[#1e2736] xl:border-[1px] xl:rounded-[16px] xl:w-fit xl:py-[16px] xl:h-fit hidden xl:inline-block">
-            <p
-              className={`px-[32px] py-3 w-[230px] ${
-                tab === 0 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-              }`}
-              onClick={() => setTab(0)}
-            >
-              UI/UX 디자인
-            </p>
-            <p
-              className={`px-[32px] py-3 ${
-                tab === 1 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-              }`}
-              onClick={() => {
-                console.log(8888);
-                setTab(1);
-              }}
-            >
-              APP 개발
-            </p>
+            {types &&
+              types.data.map((t, index) => (
+                <p
+                  key={index}
+                  className={`px-[32px] py-3 w-[230px] cursor-pointer ${
+                    t.name === type
+                      ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]"
+                      : ""
+                  }`}
+                  onClick={() => setType(t.name)}
+                >
+                  {t.name}
+                </p>
+              ))}
           </div>
           <div className="xl:hidden md:flex hidden md:gap-6">
             <p
@@ -76,34 +77,11 @@ const EstimatePricing = () => {
           <div className="w-full xl:hidden md:hidden lg:hidden mb-10">
             <SelectCustom />
           </div>
-          <div className="flex flex-col gap-10 ">
-            <div>
-              <label htmlFor="" className="mb-6 flex text-[20px] font-bold">
-                슬뎃놈
-              </label>
-              <div className="flex gap-6 flex-wrap">
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="" className="mb-6 flex text-[20px] font-bold">
-                구현할 페이지 분량
-              </label>
-              <div className="flex gap-6 flex-wrap">
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-                <CardEstimateCalculation />
-              </div>
-            </div>
+          <div className="flex flex-col gap-10">
+            {tags &&
+              tags.data.map((v, index) => (
+                <ListOptions type={type} tag={v} key={index} />
+              ))}
           </div>
         </div>
       </div>

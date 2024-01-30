@@ -101,15 +101,27 @@ const config = {
         "pulse-call": {
           "0%": {
             "box-shadow": "0 0 0 0 rgba(2,143,227,.7)",
-            transform: "scale(.95)",
+            transform: "scale(.95) rotate(0) skew(1deg)",
           },
-          "70%": {
+          "10%": {
+            transform: "scale(.95) rotate(-25deg) skew(1deg)",
+          },
+          "20%": {
+            transform: "scale(.95) rotate(25deg) skew(1deg)",
+          },
+          "30%": {
+            transform: "scale(.95) rotate(-25deg) skew(1deg)",
+          },
+          "40%": {
+            transform: "scale(.95) rotate(25deg) skew(1deg)",
+          },
+          "50%": {
             "box-shadow": "0 0 0 10px rgba(2,143,227,0)",
-            transform: "scale(1)",
+            transform: "scale(1) rotate(0) skew(1deg)",
           },
           "100%": {
             "box-shadow": "0 0 0 0 rgba(2,143,227,0)",
-            transform: "scale(.95)",
+            transform: "scale(.95) rotate(0) skew(1deg)",
           },
         },
       },
@@ -128,7 +140,7 @@ const config = {
         bounce: "240ms ease 0s 1 running bounce",
         "slide-left": "20s slide-left infinite linear",
         "slide-right": "20s slide-right infinite linear",
-        "pulse-call": "2s pulse-call infinite",
+        "pulse-call": "2s pulse-call infinite ease-in-out",
       },
       colors: {
         primary: "var(--primary)",

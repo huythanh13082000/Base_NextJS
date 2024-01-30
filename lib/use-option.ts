@@ -1,9 +1,10 @@
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils";
 import { Options } from "@/types/Options";
+import { IResponse } from "@/types/Response";
 
 export default function useOption(type?: string, tag?: string) {
-  const { data: tags, error } = useSWR<Options[]>(
+  const { data: options, error } = useSWR<IResponse<Options[]>>(
     "/v2/option?" +
       new URLSearchParams({
         ...(type ? { type } : {}),
@@ -16,8 +17,8 @@ export default function useOption(type?: string, tag?: string) {
   );
 
   return {
-    tags,
+    options,
     error,
-    loading: !tags && !error,
+    loading: !options && !error,
   };
 }

@@ -1,9 +1,9 @@
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils";
-import { Response } from "@/types/Response";
+import { IResponse } from "@/types/Response";
 
 export default function usePortfolio() {
-  const { data: portfolios, error } = useSWR<Response<PortfolioType[]>>(
+  const { data: portfolios, error } = useSWR<IResponse<PortfolioType[]>>(
     "/v2/portfolio",
     fetcher,
     {

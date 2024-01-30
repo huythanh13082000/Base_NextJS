@@ -4,7 +4,6 @@ import PricingSession from "@/components/pricing-session";
 import PortfolioSession from "@/components/portfolio-session";
 import PartnerSession from "@/components/partner-session";
 import AboutSession from "@/components/about-session";
-import { Button } from "@/components/ui/button";
 import CallIcon from "@/public/icons/call.svg";
 
 export default function Home() {
