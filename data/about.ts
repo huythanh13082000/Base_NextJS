@@ -94,6 +94,18 @@ export const Framework: Array<{ name: string; icon: string }> = [
     name: "Vue",
     icon: "/images/Vue.png",
   },
+  {
+    name: "Next Js",
+    icon: "/images/Next.png",
+  },
+  {
+    name: "React Native",
+    icon: "/images/React.png",
+  },
+  {
+    name: "Nest Js",
+    icon: "/images/Nest.png",
+  },
 ];
 
 export const Database: Array<{ name: string; icon: string }> = [

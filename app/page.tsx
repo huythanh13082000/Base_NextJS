@@ -17,7 +17,7 @@ export default function Home() {
 
       <a
         href="tel:050356925001"
-        className="fixed animate-pulse-call cursor-pointer w-12 h-12 bg-[#396FFD] flex justify-center items-center rounded-full lg:top-[830px] xl:top-[850px] top-[680px] right-4 lg:right-5 xl:right-7 z-50 2xl:right-[250px]"
+        className="fixed animate-pulse-call cursor-pointer w-12 h-12 bg-[#396FFD] flex justify-center items-center rounded-full bottom-[180px] lg:bottom-12 right-4 lg:right-5 xl:right-7 z-50 2xl:right-[250px]"
       >
         <CallIcon />
       </a>

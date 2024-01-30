@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import useTags from "@/lib/use-tag";
 import useType from "@/lib/use-type";
 import ListOptions from "@/components/list-options";
+import optionStore from "@/store/option";
 
 const containerStyle = {
   background:
@@ -17,9 +18,9 @@ const EstimatePricing = () => {
   const [tab, setTab] = useState(0);
   const [open, setOpen] = useState(false);
   const [type, setType] = useState<string>("UI/UX 디자인");
-  const [tag, setTag] = useState<string>("UI_PAGE");
   const { tags } = useTags(type);
   const { types } = useType();
+  const { options, getTotalPrice } = optionStore((state) => state);
   return (
     <div className="w-full">
       <div className="lg:px-[80px] px-4 xl:px-24">
@@ -85,20 +86,22 @@ const EstimatePricing = () => {
           </div>
         </div>
       </div>
-      <div className="sticky bottom-0 w-full z-50 bg-[#08090F] lg:px-[80px] px-4 xl:px-24 flex justify-between items-center py-5">
-        <div>
-          <p className="font-semibold  text-[18px] mb-2">예상 견적</p>
+      {options && options.length && (
+        <div className="sticky bottom-0 w-full z-50 bg-[#08090F] lg:px-[80px] px-4 xl:px-24 flex justify-between items-center py-5">
           <div>
-            <span className="bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[18px] sm:text-[28px]">
-              9600
-            </span>{" "}
-            <span className="text-sm text-[#98A1B6] sm:text-[18px]">
-              만 원 (예상 기간 7개월)
-            </span>{" "}
+            <p className="font-semibold  text-[18px] mb-2">예상 견적</p>
+            <div>
+              <span className="bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[18px] sm:text-[28px]">
+                {getTotalPrice()}
+              </span>{" "}
+              <span className="text-sm text-[#98A1B6] sm:text-[18px]">
+                만원 (예상 기간 7개월)
+              </span>{" "}
+            </div>
           </div>
+          <Button onClick={() => setOpen(true)}>견적 보기</Button>
         </div>
-        <Button onClick={() => setOpen(true)}>견적 보기</Button>
-      </div>
+      )}
       <DialogEstimate isOpen={open} onClose={() => setOpen(false)} />
     </div>
   );

@@ -1,28 +1,25 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { Options } from "@/types/Options";
+import { OptionChoose } from "@/types/Options";
 import { produce } from "immer";
 
 interface OptionActions {
-  addOption: (
-    option: Pick<Options, "type" | "nameOption" | "price" | "id">,
-  ) => void;
-  deleteOption: (
-    option: Pick<Options, "type" | "nameOption" | "price" | "id">,
-  ) => void;
+  addOption: (option: OptionChoose) => void;
+  deleteOption: (option: OptionChoose) => void;
+  getTotalPrice: () => number;
 }
 
 interface OptionStates {
-  options: Pick<Options, "type" | "nameOption" | "price" | "id">[] | null;
+  options: OptionChoose[] | null;
 }
 
 const initialStates: OptionStates = {
-  options: null,
+  options: [],
 };
 
 const optionStore = create<OptionStates & OptionActions>()(
-  immer((set) => ({
+  immer((set, get) => ({
     ...initialStates,
     addOption: (payload) =>
       set((draft) => {
@@ -39,6 +36,14 @@ const optionStore = create<OptionStates & OptionActions>()(
           draft.options.splice(optionIndex, 1);
         }
       }),
+    getTotalPrice: () => {
+      const { options } = get();
+      return options
+        ? options.reduce((price, item) => {
+            return price + Number(item.price);
+          }, 0)
+        : 0;
+    },
   })),
 );
 
