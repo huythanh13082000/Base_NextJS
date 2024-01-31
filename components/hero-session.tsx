@@ -1,10 +1,13 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CustomDivider from "@/components/custom-divider";
 import HeroImage from "@/components/hero-image";
+import { useRouter } from "next/navigation";
 type HeroSessionProps = Pick<React.HTMLAttributes<HTMLDivElement>, "className">;
 const HeroSession = ({ className }: HeroSessionProps) => {
+  const router = useRouter();
   return (
     <section className={className}>
       <div className="relative w-full text-center h-[390px] max-sm:h-auto">
@@ -22,7 +25,10 @@ const HeroSession = ({ className }: HeroSessionProps) => {
             Design, deploy, and test onboarding experiences as easily,
             accurately, and on time as your business wants
           </p>
-          <Button className="translate-y-[-1rem] mb-12 animate-fade-in opacity-0 [--animation-delay:600ms] hover:shadow-secondary transition-[shadow,text-shadow] [&_.highlight]:ml-2 group">
+          <Button
+            onClick={() => router.push("/estimate-pricing")}
+            className="translate-y-[-1rem] mb-12 animate-fade-in opacity-0 [--animation-delay:600ms] hover:shadow-secondary transition-[shadow,text-shadow] [&_.highlight]:ml-2 group"
+          >
             <span>Start building</span>
             <span className="w-0 overflow-hidden group-hover:w-[24px] transition-all duration-300 origin-left">
               <Image

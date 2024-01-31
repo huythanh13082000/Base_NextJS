@@ -19,6 +19,7 @@ import {
 } from "framer-motion";
 import { Pricing } from "@/types/Pricing";
 import useLinearCard from "@/lib/linear-card";
+import { useRouter } from "next/navigation";
 
 const CustomCard = motion(Card);
 const CardPricing = ({
@@ -28,6 +29,7 @@ const CardPricing = ({
   provide,
   description,
 }: Pricing) => {
+  const router = useRouter();
   const {
     handleMouseMove,
     handleMouseLeave,
@@ -93,7 +95,12 @@ const CardPricing = ({
             {price}
           </h1>
         </div>
-        <Button className="w-full custom-cursor mt-auto">견적 계산</Button>
+        <Button
+          onClick={() => router.push("/estimate-pricing")}
+          className="w-full custom-cursor mt-auto"
+        >
+          견적 계산
+        </Button>
       </CardFooter>
     </CustomCard>
   );

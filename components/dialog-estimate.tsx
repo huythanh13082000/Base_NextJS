@@ -26,7 +26,8 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
   children,
   navigate,
 }) => {
-  const { getTotalPrice } = optionStore((state) => state);
+  const toDay = new Date();
+  const { getTotalPrice, options } = optionStore((state) => state);
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-[#010A18] border-[#1e2736] border-[1px]">
@@ -51,7 +52,7 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                   </div>
                   <div className="w-full  flex rounded-t-xl">
                     <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
-                      2023-12-24
+                      {toDay.toISOString().split("T")[0]}
                     </div>
                     <div className="w-1/3 h-11 flex items-center  font-semibold text-[#98A1B6]">
                       귀하
@@ -81,7 +82,7 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                     </div>
                     <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6]">
                       (주)불면증
-                      <span className="">Seungwoo Lee</span>
+                      {/*<span className="">Seungwoo Lee</span>*/}
                     </div>
                     <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6] "></div>
                   </div>
@@ -99,16 +100,21 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                       구현 비용
                     </div>
                   </div>
-                  <div className="w-full  flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
-                      60 페이지 이하
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6]">
-                      60 페이지의 프론트엔드
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center  font-semibold text-[#98A1B6] ">
-                      2400만 원
-                    </div>
+                  <div className="overflow-y-auto max-h-[200px]">
+                    {options &&
+                      options.map((option, index) => (
+                        <div key={index} className="w-full  flex rounded-t-xl">
+                          <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
+                            {option.nameOption}
+                          </div>
+                          <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6]">
+                            {""}
+                          </div>
+                          <div className="w-1/3 h-11 flex items-center  font-semibold text-[#98A1B6] ">
+                            {formatCurrency(option.price)} 만원
+                          </div>
+                        </div>
+                      ))}
                   </div>
                 </div>
                 <div className="w-full rounded-xl border-[1px] border-solid border-[#1e2736]">

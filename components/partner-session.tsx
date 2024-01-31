@@ -40,27 +40,27 @@ const PartnerSession = ({ className }: PartnerSessionProps) => {
           }}
           className="absolute inset-0 pointer-events-none z-10"
         ></div>
-        <div className="w-[2400px] grid grid-cols-12 items-center animate-slide-left mb-12">
-          {[...ImagePartner, ...ImagePartner].map((item, index) => (
-            <div key={index} className="relative justify-self-center">
-              <Image src={item} alt="Car" width={56} height={56} />
-            </div>
-          ))}
-        </div>
-        <div className="w-[2400px] grid grid-cols-12 items-center animate-slide-right mb-12">
-          {[...ImagePartner, ...ImagePartner].map((item, index) => (
-            <div key={index} className="relative justify-self-center">
-              <Image src={item} alt="Car" width={56} height={56} />
-            </div>
-          ))}
-        </div>
         <div className="w-[2400px] grid grid-cols-12 items-center animate-slide-left">
           {[...ImagePartner, ...ImagePartner].map((item, index) => (
             <div key={index} className="relative justify-self-center">
-              <Image src={item} alt="Car" width={56} height={56} />
+              <Image src={item} alt="Partner" width={180} height={180} />
             </div>
           ))}
         </div>
+        {/*<div className="w-[2400px] grid grid-cols-12 items-center animate-slide-right mb-12">*/}
+        {/*  {[...ImagePartner, ...ImagePartner].map((item, index) => (*/}
+        {/*    <div key={index} className="relative justify-self-center">*/}
+        {/*      <Image src={item} alt="Car" width={56} height={56} />*/}
+        {/*    </div>*/}
+        {/*  ))}*/}
+        {/*</div>*/}
+        {/*<div className="w-[2400px] grid grid-cols-12 items-center animate-slide-left">*/}
+        {/*  {[...ImagePartner, ...ImagePartner].map((item, index) => (*/}
+        {/*    <div key={index} className="relative justify-self-center">*/}
+        {/*      <Image src={item} alt="Car" width={56} height={56} />*/}
+        {/*    </div>*/}
+        {/*  ))}*/}
+        {/*</div>*/}
       </div>
       {/*<div className="bg-divider w-full h-px mt-[160px]"></div>*/}
     </section>

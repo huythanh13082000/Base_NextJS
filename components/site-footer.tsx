@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -8,8 +9,10 @@ import LocationSVG from "@/public/icons/location.svg";
 import CallSVG from "@/public/icons/call-incoming.svg";
 import SmsSVG from "@/public/icons/sms.svg";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SiteFooter = () => {
+  const router = useRouter();
   return (
     <section>
       <div className="relative h-[400px] w-full lg:px-[80px] px-4 xl:px-24">
@@ -33,7 +36,22 @@ const SiteFooter = () => {
               </span>
             </div>
             <p className="mb-2">린스타트업 전문 아웃소싱 개발회사</p>
-            <Button className="max-w-[160px] py-2">Start building</Button>
+            <Button
+              onClick={() => router.push("/estimate-pricing")}
+              className="w-fit py-2 hover:shadow-secondary group"
+            >
+              <span>Start building</span>
+              <span className="w-0 group-hover:w-6 transition-all duration-300 origin-left">
+                <Image
+                  src="/icons/arrow-right.svg"
+                  alt="arrow-right"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto"
+                />
+              </span>
+            </Button>
           </div>
           <div className="flex flex-1 flex-col gap-4 text-[14px] text-span font-medium">
             <p className="mb-2 font-bold text-[#E8E7EE]">회사정보</p>

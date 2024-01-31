@@ -3,6 +3,7 @@ export interface Options {
   type: string;
   tag: string;
   nameOption: string;
+  description?: string;
   image: string;
   price: number;
   schedule: number;

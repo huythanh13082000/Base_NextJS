@@ -1,15 +1,15 @@
 "use client";
 
 import DialogEstimate from "@/components/dialog-estimate";
-import { SelectCustom } from "@/components/select-custom";
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import useTags from "@/lib/use-tag";
 import useType from "@/lib/use-type";
 import ListOptions from "@/components/list-options";
 import optionStore from "@/store/option";
 import { formatCurrency } from "@/lib/formatCurrency";
 import { useRouter } from "next/navigation";
+import SelectCustom from "@/components/select-custom";
 
 const containerStyle = {
   background:
@@ -24,6 +24,9 @@ const EstimatePricing = () => {
   const { types } = useType();
   const { options, getTotalPrice } = optionStore((state) => state);
   const router = useRouter();
+  const onChangeSelect = useCallback((value: string) => {
+    setType(value);
+  }, []);
   return (
     <div className="w-full">
       <div className="lg:px-[80px] px-4 xl:px-24">
@@ -36,7 +39,7 @@ const EstimatePricing = () => {
           </h1>
           <p className="text-[14px] lg:text-[18px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
             프로젝트 착수시 상세 개발 견적을 받을 수 있습니다 담당 개발자가
-            배정되어 빠르게 개 발이 진행됩니다
+            배정되어 빠르게 개발이 진행됩니다
           </p>
         </div>
         <div className="flex flex-col xl:gap-[70px] xl:py-[60px] xl:flex-row md:gap-[60px]">
@@ -57,29 +60,27 @@ const EstimatePricing = () => {
               ))}
           </div>
           <div className="xl:hidden md:flex hidden md:gap-6">
-            <p
-              className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
-                tab === 0 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-              }`}
-              onClick={() => {
-                setTab(0);
-              }}
-            >
-              UI/UX 디자인
-            </p>
-            <p
-              className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
-                tab === 1 ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]" : ""
-              }`}
-              onClick={() => {
-                setTab(1);
-              }}
-            >
-              APP 개발
-            </p>
+            {types &&
+              types.data.map((t, index) => (
+                <p
+                  key={index}
+                  className={`px-[20px] py-3 border-[#1e2736] border-[1px] rounded-[12px] w-fit font-semibold text-[14px] cursor-pointer ${
+                    t.name === type
+                      ? "bg-gradient-to-b from-[#396FFD] to-[#0744E6]"
+                      : ""
+                  }`}
+                  onClick={() => setType(t.name)}
+                >
+                  {t.name}
+                </p>
+              ))}
           </div>
           <div className="w-full xl:hidden md:hidden lg:hidden mb-10">
-            <SelectCustom />
+            <SelectCustom
+              type={type}
+              types={types ? types.data : []}
+              onChange={onChangeSelect}
+            />
           </div>
           <div className="flex flex-col gap-10">
             {tags &&
@@ -89,7 +90,7 @@ const EstimatePricing = () => {
           </div>
         </div>
       </div>
-      {options && options.length && (
+      {options && !!options.length && (
         <div className="sticky bottom-0 w-full z-50 bg-[#08090F] lg:px-[80px] px-4 xl:px-24 flex justify-between items-center py-5">
           <div>
             <p className="font-semibold  text-[18px] mb-2">예상 견적</p>
