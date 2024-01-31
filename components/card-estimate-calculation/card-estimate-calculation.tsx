@@ -24,7 +24,12 @@ const CardEstimateCalculation = ({ option }: CardEstimateCalculationProps) => {
   } = useLinearCard();
   const handleCheckOption = () => {
     if (!initialState) {
-      addOption(option);
+      addOption({
+        nameOption: option.nameOption,
+        type: option.type,
+        id: option.id,
+        price: option.price,
+      });
     } else {
       deleteOption(option);
     }

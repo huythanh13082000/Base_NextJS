@@ -8,6 +8,7 @@ interface OptionActions {
   addOption: (option: OptionChoose) => void;
   deleteOption: (option: OptionChoose) => void;
   getTotalPrice: () => number;
+  clearOption: () => void;
 }
 
 interface OptionStates {
@@ -44,6 +45,12 @@ const optionStore = create<OptionStates & OptionActions>()(
           }, 0)
         : 0;
     },
+    clearOption: () =>
+      set((draft) => {
+        if (draft.options) {
+          draft.options.length = 0;
+        }
+      }),
   })),
 );
 

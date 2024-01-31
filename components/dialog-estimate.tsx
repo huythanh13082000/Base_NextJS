@@ -11,10 +11,12 @@ import {
 import Image from "next/image";
 import { Button } from "./ui/button";
 import optionStore from "@/store/option";
+import { formatCurrency } from "@/lib/formatCurrency";
 
 interface MyDialogProps {
   isOpen?: boolean;
   onClose?: () => void;
+  navigate: () => void;
   children?: React.ReactNode;
 }
 
@@ -22,6 +24,7 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
   isOpen,
   onClose,
   children,
+  navigate,
 }) => {
   const { getTotalPrice } = optionStore((state) => state);
   return (
@@ -127,7 +130,7 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                     </div>
                     <div className="w-4/6 h-11 flex items-center  font-semibold text-[white] ">
                       <span className="bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent text-[18px]">
-                        {getTotalPrice()}
+                        {formatCurrency(getTotalPrice())}
                       </span>
                       &nbsp;
                       <span className="text-[14px] font-medium">만원</span>
@@ -149,7 +152,9 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                 서버는 VERCEL을 사용합니다{" "}
               </p>
             </div>
-            <Button className="max-w-full">제출하기</Button>
+            <Button onClick={navigate} className="max-w-full">
+              제출하기
+            </Button>
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

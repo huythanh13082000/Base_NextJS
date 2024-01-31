@@ -17,43 +17,112 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
+import { toast } from "sonner";
+import { fetcher } from "@/lib/utils";
+import optionStore from "@/store/option";
 
 const ContactFromSchema = z.object({
   platform: z.enum(["WEB_APP", "MOBILE_APP", "BOTH", "NOTHING"]).optional(),
-  companyName: z.string(),
-  customerName: z.string(),
-  email: z.string().email({ message: "field is invalid email address" }),
-  governmentSupport: z.string(),
-  phone: z.string(),
-  position: z.string(),
-  projectName: z.string(),
+  companyName: z.string({ required_error: "companyName is required" }),
+  customerName: z.string({ required_error: "customerName is required" }),
+  email: z
+    .string({ required_error: "email is required" })
+    .email({ message: "field is invalid email address" }),
+  governmentSupport: z.string().optional(),
+  phone: z.string({ required_error: "phone is required" }),
+  position: z.string({ required_error: "position is required" }),
+  projectName: z.string({ required_error: "projectName is required" }),
   description: z.string().optional(),
-  presenter: z.string(),
-  planFile: z.any(),
-  maximumBudget: z.number(),
+  presenter: z.string({ required_error: "presenter is required" }),
+  planFile: z.any().optional(),
+  maximumBudget: z
+    .number({ required_error: "maximumBudget is required" })
+    .int("maximumBudget must be a number"),
   mobile: z.boolean().default(false).optional(),
   web: z.boolean().default(false).optional(),
+  options: z.any().optional(),
+  estimatedCost: z.number().optional(),
 });
 type ContactFormValues = z.infer<typeof ContactFromSchema>;
 const FormContact = () => {
+  const { options, getTotalPrice, clearOption } = optionStore((state) => state);
   const [files, setFiles] = useState<HTMLInputElement["files"]>(null);
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(ContactFromSchema),
     defaultValues: { platform: "NOTHING", web: false, mobile: false },
     mode: "onChange",
   });
-  const handleSubmit = (data: ContactFormValues) => {
-    if (data.web && data.mobile) {
-      data.platform = "BOTH";
-    } else if (!data.web && !data.mobile) {
-      data.platform = "NOTHING";
-    } else if (!data.web) {
-      data.platform = "MOBILE_APP";
-    } else {
-      data.platform = "WEB_APP";
+  const { formState, reset } = form;
+  const handleSubmit = async (data: ContactFormValues) => {
+    try {
+      if (data.web && data.mobile) {
+        data.platform = "BOTH";
+      } else if (!data.web && !data.mobile) {
+        data.platform = "NOTHING";
+      } else if (!data.web) {
+        data.platform = "MOBILE_APP";
+      } else {
+        data.platform = "WEB_APP";
+      }
+      const formData = new FormData();
+      let resFile: {
+        code: number;
+        success: boolean;
+        data: Array<string>;
+      };
+      if (files && files.length) {
+        for (let x = 0; x < files.length; x++) {
+          formData.append("files", files[x]);
+        }
+        resFile = await fetcher<{
+          code: number;
+          success: boolean;
+          data: Array<string>;
+        }>("/system/multiple-file", {
+          method: "POST",
+          body: formData,
+        });
+        data.planFile = resFile.data;
+      }
+      if (options && options.length) {
+        data.options = options;
+        data.estimatedCost = getTotalPrice();
+      }
+      const res = await fetcher("/order-project", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res && res.success) {
+        toast.success("Order has been created");
+      }
+    } catch (e) {
+      toast.error("Something went wrong");
     }
-    console.log("data", data);
+    clearOption();
   };
+  React.useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({
+        platform: "NOTHING",
+        web: false,
+        mobile: false,
+        projectName: "",
+        companyName: "",
+        customerName: "",
+        description: "",
+        email: "",
+        governmentSupport: "",
+        phone: "",
+        planFile: "",
+        maximumBudget: 0,
+        position: "",
+        presenter: "",
+      });
+    }
+  }, [formState, reset]);
   return (
     <div>
       <Form {...form}>
@@ -66,8 +135,8 @@ const FormContact = () => {
             control={form.control}
             name="projectName"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-sm font-medium text-[#D2D0DD]">
+              <FormItem className="z-50">
+                <FormLabel className="text-sm font-medium text-[#D2D0DD] z-10">
                   프로젝트명
                   <span className="text-red-600 text-sm font-medium">
                     &#160;*
@@ -77,6 +146,7 @@ const FormContact = () => {
                   <Input
                     className="px-4 py-2 text-base"
                     placeholder="프로젝트에 참여"
+                    autoFocus
                     {...field}
                   />
                 </FormControl>
@@ -99,15 +169,9 @@ const FormContact = () => {
                       <div className="flex gap-1 items-center">
                         {files &&
                           Array.from(files).map((file, index) => {
-                            const objectUrl = URL.createObjectURL(file);
                             return (
-                              <div key={index} className="relative w-6 h-6">
-                                <Image
-                                  src={objectUrl}
-                                  fill
-                                  alt={`Preview Image ${index}`}
-                                  className="rounded-full h-auto w-auto object-cover border"
-                                />
+                              <div key={index} className="w-fit">
+                                {file.name}
                               </div>
                             );
                           })}
@@ -170,6 +234,7 @@ const FormContact = () => {
                 <FormControl>
                   <Input
                     type="number"
+                    min={0}
                     className="px-4 py-2 text-base"
                     placeholder="최대예상금액 참여"
                     {...field}

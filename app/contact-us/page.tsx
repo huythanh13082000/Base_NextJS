@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import FormContact from "@/components/form-contact";
 import optionStore from "@/store/option";
+import { formatCurrency } from "@/lib/formatCurrency";
 
 const ContactUs = () => {
   const { getTotalPrice } = optionStore((state) => state);
@@ -28,7 +29,7 @@ const ContactUs = () => {
       </div>
       <div className="px-0 lg:px-[100px]">
         <div className="rounded-2xl bg-gradient-to-b from-transparent via-[#090A2A] to-[#040C18] via-[115.72%] px-4 lg:px-10 pt-8 pb-6 border border-[#484848]">
-          {getTotalPrice() && (
+          {!!getTotalPrice() && (
             <div className="mb-8 rounded-xl border border-[#484848]">
               <div className="flex rounded-t-xl py-2 px-6 font-semibold bg-[#0b1421]">
                 <p className="xl:w-[254px] lg:w-[230px] w-[100px]">개발기간</p>
@@ -43,7 +44,7 @@ const ContactUs = () => {
                 </p>
                 <p className="text-[15px] flex items-center">
                   <span className="bg-blue-gradient text-transparent bg-clip-text text-[18px] lg:text-[20px]">
-                    {getTotalPrice()}
+                    {formatCurrency(getTotalPrice())}
                   </span>
                   &#160;만원
                 </p>

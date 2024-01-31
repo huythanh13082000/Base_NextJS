@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import SiteHeader from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+
 import SiteFooter from "@/components/site-footer";
 import CopyrightBanner from "@/components/copyright-banner";
 import { getFrontEndUrl } from "@/lib/getBaseUrl";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -97,6 +99,20 @@ export default function RootLayout({
             <TailwindIndicator />
           </div>
         </ThemeProvider>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            unstyled: true,
+            classNames: {
+              toast:
+                "bg-toast opacity-40 text-opacity-100 font-bold gap-2 p-3 rounded-full flex items-center justify-between",
+              error: "text-red-400",
+              success: "text-green-400",
+              warning: "text-yellow-400",
+              info: "bg-blue-400",
+            },
+          }}
+        />
       </body>
     </html>
   );

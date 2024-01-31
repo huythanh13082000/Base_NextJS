@@ -161,6 +161,8 @@ const config = {
           "radial-gradient(89.06% 89.06% at 50% 50%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 48.41%), linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%), #010718",
         "hero-glow":
           "conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(36, 0, 255) 0deg, rgb(0, 135, 255) 67.5deg, rgb(108, 39, 157) 198.75deg, rgb(24, 38, 163) 251.25deg, rgb(54, 103, 196) 301.88deg, rgb(105, 30, 255) 360deg)",
+        toast:
+          "linear-gradient(90deg, rgba(130,125,212,1) 0%, rgba(9,95,145,0.7875525210084033) 40%, rgba(72,171,208,1) 80%)",
       },
     },
   },

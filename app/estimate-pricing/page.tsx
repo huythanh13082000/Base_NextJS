@@ -8,6 +8,8 @@ import useTags from "@/lib/use-tag";
 import useType from "@/lib/use-type";
 import ListOptions from "@/components/list-options";
 import optionStore from "@/store/option";
+import { formatCurrency } from "@/lib/formatCurrency";
+import { useRouter } from "next/navigation";
 
 const containerStyle = {
   background:
@@ -21,6 +23,7 @@ const EstimatePricing = () => {
   const { tags } = useTags(type);
   const { types } = useType();
   const { options, getTotalPrice } = optionStore((state) => state);
+  const router = useRouter();
   return (
     <div className="w-full">
       <div className="lg:px-[80px] px-4 xl:px-24">
@@ -92,7 +95,7 @@ const EstimatePricing = () => {
             <p className="font-semibold  text-[18px] mb-2">예상 견적</p>
             <div>
               <span className="bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent font-semibold text-[18px] sm:text-[28px]">
-                {getTotalPrice()}
+                {formatCurrency(getTotalPrice())}
               </span>{" "}
               <span className="text-sm text-[#98A1B6] sm:text-[18px]">
                 만원 (예상 기간 7개월)
@@ -102,7 +105,11 @@ const EstimatePricing = () => {
           <Button onClick={() => setOpen(true)}>견적 보기</Button>
         </div>
       )}
-      <DialogEstimate isOpen={open} onClose={() => setOpen(false)} />
+      <DialogEstimate
+        navigate={() => router.push("/contact-us")}
+        isOpen={open}
+        onClose={() => setOpen(false)}
+      />
     </div>
   );
 };
