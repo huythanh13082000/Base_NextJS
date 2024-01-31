@@ -19,3 +19,23 @@
 .custom-cursor {
     cursor: url('../public/icons/Pointing.svg'), pointer;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #1f2937;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 100vh;
+    background: linear-gradient(to right, #4b6cb7 0%, #182848 51%, #4b6cb7 100%);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-position: right center;
+}

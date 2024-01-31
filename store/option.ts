@@ -12,7 +12,7 @@ interface OptionActions {
 }
 
 interface OptionStates {
-  options: OptionChoose[] | null;
+  options: OptionChoose[];
 }
 
 const initialStates: OptionStates = {

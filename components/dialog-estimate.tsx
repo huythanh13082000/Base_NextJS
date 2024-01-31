@@ -77,11 +77,11 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                     </div>
                   </div>
                   <div className="w-full flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
-                      362-81-00644
+                    <div className="w-1/3 h-11 flex items-center  p-3 font-semibold text-[#98A1B6]">
+                      491-87-02258
                     </div>
                     <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6]">
-                      (주)불면증
+                      지엠포컴퍼니 주식회사
                       {/*<span className="">Seungwoo Lee</span>*/}
                     </div>
                     <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6] "></div>
