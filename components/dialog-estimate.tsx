@@ -123,7 +123,7 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                       개발기간
                     </div>
                     <div className="w-1/2 h-11 flex items-center font-semibold text-[white]">
-                      탄력 가격(VAT)
+                      부가세 별도
                     </div>
                   </div>
                   <div className="w-full  flex rounded-t-xl">

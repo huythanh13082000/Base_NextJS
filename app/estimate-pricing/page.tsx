@@ -99,7 +99,7 @@ const EstimatePricing = () => {
                 {formatCurrency(getTotalPrice())}
               </span>{" "}
               <span className="text-sm text-[#98A1B6] sm:text-[18px]">
-                만원 (예상 기간 7개월)
+                만원
               </span>{" "}
             </div>
           </div>
