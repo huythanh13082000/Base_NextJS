@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     emails: ["gm4-korea@greenapps.kr"],
   },
   verification: {
-    google: "zCJKMTjIx6zbmyuEaj_dFMKnqzKvxLYvloDXuP83nRA",
+    google: "02_hAUYVHZ-qJTu_eeASXfV2iaGwJboSXqO2bS74MBM",
     // other: {
     //   "naver-site-verification": "zCJKMTjIx6zbmyuEaj_dFMKnqzKvxLYvloDXuP83nRA",
     // },
