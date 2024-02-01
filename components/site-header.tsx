@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import MainNav from "@/components/main-nav";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import CustomDivider from "@/components/custom-divider";
@@ -9,6 +9,17 @@ import Menu from "./menu";
 const SiteHeader = () => {
   const router = useRouter();
   const handleNavigate = () => router.push("/");
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = useCallback(() => {
+    setIsOpen((x) => !x);
+  }, []);
+  const setTrue = useCallback(() => {
+    setIsOpen(true);
+  }, []);
+
+  const setFalse = useCallback(() => {
+    setIsOpen(false);
+  }, []);
   return (
     <div className="sticky top-0 z-40 backdrop-blur-md">
       <div className="flex items-center justify-between w-full pt-2 lg:px-[80px] px-4 xl:px-24">
@@ -25,7 +36,12 @@ const SiteHeader = () => {
           </span>
         </div>
         <MainNav />
-        <Menu />
+        <Menu
+          isOpen={isOpen}
+          toggle={toggle}
+          setFalse={setFalse}
+          setTrue={setTrue}
+        />
       </div>
       <CustomDivider />
     </div>

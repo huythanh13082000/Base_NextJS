@@ -69,7 +69,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    images: "/images/avatar.png",
+    images: [
+      { url: "/images/avatar.png" },
+      { url: "/images/logo_new_header.png" },
+      { url: "https://d1gey57zr11abr.cloudfront.net/avatar.png" },
+    ],
     emails: ["gm4-korea@greenapps.kr"],
   },
   verification: {

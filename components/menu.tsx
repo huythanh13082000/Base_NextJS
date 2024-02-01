@@ -17,17 +17,33 @@ import { usePathname } from "next/navigation";
 interface MyMenuProps {
   isOpen?: boolean;
   onClose?: () => void;
+  toggle: () => void;
+  setTrue: () => void;
+  setFalse: () => void;
   children?: React.ReactNode;
 }
 
-const Menu: React.FC<MyMenuProps> = ({ isOpen, onClose, children }) => {
+const Menu: React.FC<MyMenuProps> = ({
+  isOpen,
+  onClose,
+  children,
+  toggle,
+  setTrue,
+  setFalse,
+}) => {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   return (
     <div className="sm:hidden">
-      <Sheet open={isOpen} onOpenChange={onClose}>
+      <Sheet open={isOpen} onOpenChange={toggle}>
         <SheetTrigger>
-          <Image src={"/icons/menu.svg"} alt="" width={24} height={24} />
+          <Image
+            // onClick={setTrue}
+            src={"/icons/menu.svg"}
+            alt=""
+            width={24}
+            height={24}
+          />
         </SheetTrigger>
         <SheetContent className="bg-[#010A18] border-0">
           <SheetHeader>
@@ -46,7 +62,12 @@ const Menu: React.FC<MyMenuProps> = ({ isOpen, onClose, children }) => {
             <SheetDescription>
               <div className="flex flex-col justify-start pt-[24px]">
                 {NavList.map((nav) => (
-                  <Link href={nav.href} key={nav.href} className="text-left">
+                  <Link
+                    onClick={setFalse}
+                    href={nav.href}
+                    key={nav.href}
+                    className="text-left"
+                  >
                     <p
                       className={`inline-block font-semibold py-4 px-0`}
                       style={{

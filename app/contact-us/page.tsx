@@ -19,9 +19,9 @@ const ContactUs = () => {
           className="object-contain w-full h-auto absolute -translate-y-[25%] xl:-translate-y-[40%]"
         />
         <div className="relative">
-          <p className="font-bold text-3xl lg:text-6xl xl:text-7xl bg-title text-transparent bg-clip-text mb-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+          <h1 className="font-bold text-3xl lg:text-6xl xl:text-7xl bg-title text-transparent bg-clip-text mb-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
             Contact Us
-          </p>
+          </h1>
           <p className="text-base text-[#D2D0DD] font-medium translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
             Feel free to share any questions or feedback with us.
           </p>

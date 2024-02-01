@@ -34,10 +34,10 @@ const EstimatePricing = () => {
           className="text-center lg:leading-[50px] p-[30px] leading-[30px]"
           style={containerStyle}
         >
-          <h1 className="lg:text-[70px] text-[32px] font-bold lg:leading-[80px] leading-[30px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+          <h1 className="mb-3 lg:mb-4 xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
             Estimate Calculation
           </h1>
-          <p className="text-[14px] lg:text-[18px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
+          <p className="mb-6 lg:mb-8 xl:text-[20px] xl:leading-[28px] lg:text-[18px] lg:leading-[26px] text-[14px] leading-[20px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
             프로젝트 착수시 상세 개발 견적을 받을 수 있습니다 담당 개발자가
             배정되어 빠르게 개발이 진행됩니다
           </p>
