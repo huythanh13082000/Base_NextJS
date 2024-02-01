@@ -40,63 +40,63 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
               <div className="flex flex-col gap-6 w-[600px] sm:w-full">
                 <div className="w-full rounded-xl border-[1px] border-solid border-[#1e2736]">
                   <div className="w-full bg-[#0c1122] flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[white]">
+                    <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[white]">
                       날짜
                     </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[white]">
-                      수신
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center  font-semibold text-[white]">
+                    {/*<div className="w-1/2 h-11 flex items-center font-semibold text-[white]">*/}
+                    {/*  수신*/}
+                    {/*</div>*/}
+                    <div className="w-1/2 h-11 flex items-center  font-semibold text-[white]">
                       유효기간
                     </div>
                   </div>
                   <div className="w-full  flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
+                    <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
                       {toDay.toISOString().split("T")[0]}
                     </div>
-                    <div className="w-1/3 h-11 flex items-center  font-semibold text-[#98A1B6]">
-                      귀하
-                      <span className="">Seungwoo Lee</span>
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center  font-semibold text-[#98A1B6] ">
+                    {/*<div className="w-1/2 h-11 flex items-center  font-semibold text-[#98A1B6]">*/}
+                    {/*  귀하*/}
+                    {/*  <span className="">Seungwoo Lee</span>*/}
+                    {/*</div>*/}
+                    <div className="w-1/2 h-11 flex items-center  font-semibold text-[#98A1B6] ">
                       견적일로부터 30일
                     </div>
                   </div>
                 </div>
 
-                <div className="w-full rounded-xl border-[1px] border-solid border-[#1e2736]">
-                  <div className="w-full bg-[#0c1122] flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[white]">
-                      사업자번호
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[white]">
-                      상호
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center  font-semibold text-[white]">
-                      날인
-                    </div>
-                  </div>
-                  <div className="w-full flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center  p-3 font-semibold text-[#98A1B6]">
-                      491-87-02258
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6]">
-                      지엠포컴퍼니 주식회사
-                      {/*<span className="">Seungwoo Lee</span>*/}
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6] "></div>
-                  </div>
-                </div>
+                {/*<div className="w-full rounded-xl border-[1px] border-solid border-[#1e2736]">*/}
+                {/*  <div className="w-full bg-[#0c1122] flex rounded-t-xl">*/}
+                {/*    <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[white]">*/}
+                {/*      사업자번호*/}
+                {/*    </div>*/}
+                {/*    <div className="w-1/2 h-11 flex items-center font-semibold text-[white]">*/}
+                {/*      상호*/}
+                {/*    </div>*/}
+                {/*    <div className="w-1/2 h-11 flex items-center  font-semibold text-[white]">*/}
+                {/*      날인*/}
+                {/*    </div>*/}
+                {/*  </div>*/}
+                {/*  <div className="w-full flex rounded-t-xl">*/}
+                {/*    <div className="w-1/2 h-11 flex items-center  p-3 font-semibold text-[#98A1B6]">*/}
+                {/*      491-87-02258*/}
+                {/*    </div>*/}
+                {/*    <div className="w-1/2 h-11 flex items-center font-semibold text-[#98A1B6]">*/}
+                {/*      지엠포컴퍼니 주식회사*/}
+                {/*      /!*<span className="">Seungwoo Lee</span>*!/*/}
+                {/*    </div>*/}
+                {/*    <div className="w-1/2 h-11 flex items-center font-semibold text-[#98A1B6] "></div>*/}
+                {/*  </div>*/}
+                {/*</div>*/}
 
                 <div className="w-full rounded-xl border-[1px] border-solid border-[#1e2736]">
                   <div className="w-full bg-[#0c1122] flex rounded-t-xl">
-                    <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[white]">
+                    <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[white]">
                       기능명
                     </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[white]">
-                      설명
-                    </div>
-                    <div className="w-1/3 h-11 flex items-center font-semibold text-[white]">
+                    {/*<div className="w-1/2 h-11 flex items-center font-semibold text-[white]">*/}
+                    {/*  설명*/}
+                    {/*</div>*/}
+                    <div className="w-1/2 h-11 flex items-center font-semibold text-[white]">
                       구현 비용
                     </div>
                   </div>
@@ -104,13 +104,13 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                     {options &&
                       options.map((option, index) => (
                         <div key={index} className="w-full  flex rounded-t-xl">
-                          <div className="w-1/3 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
+                          <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[#98A1B6]">
                             {option.nameOption}
                           </div>
-                          <div className="w-1/3 h-11 flex items-center font-semibold text-[#98A1B6]">
-                            {""}
-                          </div>
-                          <div className="w-1/3 h-11 flex items-center  font-semibold text-[#98A1B6] ">
+                          {/*<div className="w-1/2 h-11 flex items-center font-semibold text-[#98A1B6]">*/}
+                          {/*  {""}*/}
+                          {/*</div>*/}
+                          <div className="w-1/2 h-11 flex items-center  font-semibold text-[#98A1B6] ">
                             {formatCurrency(option.price)} 만원
                           </div>
                         </div>
@@ -119,22 +119,22 @@ const DialogEstimate: React.FC<MyDialogProps> = ({
                 </div>
                 <div className="w-full rounded-xl border-[1px] border-solid border-[#1e2736]">
                   <div className="w-full bg-[#0c1122] flex rounded-t-xl">
-                    <div className="w-2/6 h-11 flex items-center p-3 font-semibold text-[white]">
+                    <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[white]">
                       개발기간
                     </div>
-                    <div className="w-4/6 h-11 flex items-center font-semibold text-[white]">
+                    <div className="w-1/2 h-11 flex items-center font-semibold text-[white]">
                       탄력 가격(VAT)
                     </div>
                   </div>
                   <div className="w-full  flex rounded-t-xl">
-                    <div className="w-2/6 h-11 flex items-center p-3 font-semibold text-[white]">
+                    <div className="w-1/2 h-11 flex items-center p-3 font-semibold text-[white]">
                       <span className="bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent text-[18px]">
                         7
                       </span>
                       &nbsp;
                       <span className="text-[14px] font-medium">개월</span>
                     </div>
-                    <div className="w-4/6 h-11 flex items-center  font-semibold text-[white] ">
+                    <div className="w-1/2 h-11 flex items-center  font-semibold text-[white] ">
                       <span className="bg-gradient-to-r from-[#396FFD] to-[#0744E6] bg-clip-text text-transparent text-[18px]">
                         {formatCurrency(getTotalPrice())}
                       </span>
