@@ -33,7 +33,7 @@ const ContactUs = () => {
             <div className="mb-8 rounded-xl border border-[#484848]">
               <div className="flex rounded-t-xl py-2 px-6 font-semibold bg-[#0b1421]">
                 <p className="xl:w-[254px] lg:w-[230px] w-[100px]">개발기간</p>
-                <p>탄력 가격(VAT)</p>
+                <p>부가세 별도</p>
               </div>
               <div className="flex rounded-b-xl py-2 px-6 font-semibold">
                 <p className="text-[18px] lg:text-[20px] xl:w-[254px] lg:w-[230px] w-[100px] flex items-center">
