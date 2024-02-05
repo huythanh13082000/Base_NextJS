@@ -9,10 +9,10 @@ export const NavList: Array<Navbar> = [
     content: "회사소개",
     href: "/about",
   },
-  // {
-  //   content: "포트폴리오",
-  //   href: "/portfolio",
-  // },
+  {
+    content: "포트폴리오",
+    href: "/portfolio",
+  },
   {
     content: "견적계산",
     href: "/estimate-pricing",
