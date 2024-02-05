@@ -26,6 +26,7 @@ export const metadata: Metadata = {
         languages: {
             "en-US": "/en-US",
             "ko-KO": "/ko-KO",
+            "vi-VI": "/vi-VI",
         },
     },
     generator: "Next.js",
@@ -74,8 +75,8 @@ export const metadata: Metadata = {
     openGraph: {
         images: [
             {url: "/images/avatar.png"},
-            {url: "/images/logo_new_header.png"},
             {url: "https://d1gey57zr11abr.cloudfront.net/avatar.png"},
+            {url: "/images/logo_new_header.png"},
         ],
         emails: ["gm4-korea@greenapps.kr"],
     },
