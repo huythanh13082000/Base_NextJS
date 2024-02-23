@@ -94,8 +94,10 @@ const CardPortfolio = (props: {
         <p className="text-[18px] font-bold mt-[24px] mb-[12px] text-start">
           {props.data?.title}
         </p>
-        <p className="text-[15px]">{props.data?.programming_language}</p>
-        <p className="text-[#98A1B6] mt-[8px] mb-[12px]">
+        <p className="text-[15px] text-start">
+          {props.data?.programming_language}
+        </p>
+        <p className="text-[#98A1B6] mt-[8px] mb-[12px] text-start">
           {props.data?.description}
         </p>
         <button className="mt-auto flex gap-[4px] bg-gradient-to-r from-blue-500 to-blue-900 text-transparent bg-clip-text font-bold text-[14px] custom-cursor">
