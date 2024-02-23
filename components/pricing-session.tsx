@@ -37,7 +37,7 @@ const PricingSession = ({ className }: PricingSessionProps) => {
         PRICING
       </div>
       <p className="font-bold text-center xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] bg-title text-transparent bg-clip-text opacity-0 mb-20 translate-y-[50%] [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0 [.is-visible_&]:opacity-100">
-        Unlock Your Website&#39;s Potential
+        플랫폼 운영에 필요한 개발자를 찾고 있으신가요?
       </p>
       <motion.div
         initial={{ opacity: 0, x: -300 }}

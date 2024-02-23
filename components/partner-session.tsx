@@ -30,7 +30,7 @@ const PartnerSession = ({ className }: PartnerSessionProps) => {
         PARTNERS
       </div>
       <p className="font-bold xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] bg-title text-transparent bg-clip-text mb-[100px] translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
-        Our Partners Join Force With Us
+        파트너들과 함께 성장합니다
       </p>
       <div className="relative w-full overflow-hidden mx-auto">
         <div

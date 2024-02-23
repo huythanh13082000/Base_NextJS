@@ -41,7 +41,7 @@ const PortfolioSession = () => {
           PORTFOLIO
         </div>
         <p className="font-bold xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] bg-title text-transparent bg-clip-text mb-4 translate-y-4 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
-          Navigate Through The Portfolio
+          저희를 통해 개발자를 모집한 고객사를 확인해 보세요
         </p>
         <p className="xl:text-[20px] xl:leading-[28px] lg:text-[18px] lg:leading-[26px] text-[14px] leading-[20px] text-[#D2D0DD] font-medium mb-[100px] translate-y-4 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
           산업, 분야 및 주제가 다양해졌습니다.

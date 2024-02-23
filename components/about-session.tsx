@@ -40,10 +40,10 @@ const AboutSession = ({ className }: AboutSessionProps) => {
         ABOUT US
       </div>
       <p className="font-bold xl:text-[70px] xl:leading-[80px] lg:text-[52px] lg:leading-[60px] text-[32px] leading-[40px] bg-title text-transparent bg-clip-text mb-4 translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
-        We&#39;re Here To Help You
+        개발자가 보유한 다양한 기술 스택
       </p>
       <p className="xl:text-[20px] xl:leading-[28px] lg:text-[18px] lg:leading-[26px] text-[14px] leading-[20px] text-[#D2D0DD] font-medium mb-[100px]  translate-y-8 [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] [.is-visible_&]:translate-y-0">
-        국내외 상위 개발자 100명 이상의 네트워크를 보유한 국내 유일한 개발사
+        Node.js, Angular.js, Flutter, React.js, Android/iOS, Java, Python, .Net, C#, PHP 등 개발에서 사용되는 100+ 이상의 기술 스택을 보유하고 있습니다.
       </p>
       <div className="flex flex-col gap-24 overflow-hidden">
         {AboutCategory.map((item, index) => (

@@ -40,7 +40,7 @@ const SiteFooter = () => {
               onClick={() => router.push("/estimate-pricing")}
               className="w-fit py-2 hover:shadow-secondary group"
             >
-              <span>Start building</span>
+              <span>개발자 채용 의뢰</span>
               <span className="w-0 group-hover:w-6 transition-all duration-300 origin-left">
                 <Image
                   src="/icons/arrow-right.svg"
