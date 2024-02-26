@@ -94,8 +94,10 @@ const SiteFooter = () => {
             </div>
             <div className="flex flex-col gap-4 text-[14px] text-span font-medium">
               <p className="mb-2 font-bold text-[#E8E7EE]">서비스 정책</p>
-              <p>이용약관</p>
-              <p>개인정보보호정책</p>
+              <a href="https://docs.greenapps.kr">이용약관</a>
+              <a href="https://docs.greenapps.kr/undefined-1">
+                개인정보보호정책
+              </a>
             </div>
           </div>
         </div>
