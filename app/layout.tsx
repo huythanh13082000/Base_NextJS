@@ -11,7 +11,7 @@ import SiteFooter from "@/components/site-footer";
 import CopyrightBanner from "@/components/copyright-banner";
 import { getFrontEndUrl } from "@/lib/getBaseUrl";
 import { Toaster } from "@/components/ui/sonner";
-import { Head } from "next/document";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
