@@ -14,6 +14,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
+const GA_CONVERSION_LABEL = process.env.NEXT_PUBLIC_CONVERSION_LABEL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(getFrontEndUrl()),
@@ -108,6 +109,28 @@ export default function RootLayout({
     gtag('js', new Date());
     gtag('config', '${GA_MEASUREMENT_ID}');
   `}
+      </Script>
+
+      <Script id="gtag-event" strategy="afterInteractive">
+        {`
+        gtag('event', 'conversion', {'send_to': '${GA_MEASUREMENT_ID}/${GA_CONVERSION_LABEL}'});
+          `}
+      </Script>
+      <Script id="gtag-event-init" strategy="afterInteractive">
+        {`
+        function gtag_report_conversion(url) {
+        var callback = function () {
+        if (typeof(url) != 'undefined') {
+        window.location = url;
+        }
+        };
+       gtag('event', 'conversion', {
+      'send_to': '${GA_MEASUREMENT_ID}/${GA_CONVERSION_LABEL}',
+      'event_callback': callback
+       });
+       return false;
+       }
+          `}
       </Script>
 
       <body
