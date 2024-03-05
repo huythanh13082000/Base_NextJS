@@ -58,7 +58,7 @@ const SiteFooter = () => {
             <p>회사명: 지엠포컴퍼니 주식회사 | 대표 이승우</p>
             <p>사업자등록번호: 491-87-02258</p>
             <div className="flex gap-2 items-center hover:text-[#1A55EF] group">
-              <LocationSVG className="group-hover:fill-[#1A55EF]" />
+              <LocationSVG className="group-hover:[&_path]:stroke-[#1A55EF]" />
               <a
                 href="https://maps.app.goo.gl/Jn4T6LfY7ZJtPbpB8"
                 target="_blank"
@@ -68,13 +68,13 @@ const SiteFooter = () => {
               </a>
             </div>
             <div className="flex gap-2 items-center hover:text-[#1A55EF] group">
-              <CallSVG className="group-hover:fill-[#1A55EF]" />
+              <CallSVG className="group-hover:[&_path]:stroke-[#1A55EF]" />
               <a className="group-hover:underline" href="tel:050356925001">
                 0503-5692-5001
               </a>
             </div>
             <div className="flex gap-2 items-center hover:text-[#1A55EF] group">
-              <SmsSVG className="group-hover:fill-[#1A55EF]" />
+              <SmsSVG className="group-hover:[&_path]:stroke-[#1A55EF]" />
               <a
                 href="mailto:gm4-korea@greenapps.kr"
                 className="group-hover:underline"
