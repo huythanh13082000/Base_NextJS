@@ -11,6 +11,7 @@ import SiteFooter from "@/components/site-footer";
 import CopyrightBanner from "@/components/copyright-banner";
 import { getFrontEndUrl } from "@/lib/getBaseUrl";
 import { Toaster } from "@/components/ui/sonner";
+import { Head } from "next/document";
 
 const inter = Inter({ subsets: ["latin"] });
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
@@ -98,26 +99,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+      <Head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
     window.dataLayer = window.dataLayer || [];
     function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '${GA_MEASUREMENT_ID}');
   `}
-      </Script>
+        </Script>
 
-      <Script id="gtag-event" strategy="afterInteractive">
-        {`
+        <Script id="gtag-event" strategy="afterInteractive">
+          {`
         gtag('event', 'conversion', {'send_to': '${GA_MEASUREMENT_ID}/${GA_CONVERSION_LABEL}'});
           `}
-      </Script>
-      <Script id="gtag-event-init" strategy="afterInteractive">
-        {`
+        </Script>
+        <Script id="gtag-event-init" strategy="afterInteractive">
+          {`
         function gtag_report_conversion(url) {
         var callback = function () {
         if (typeof(url) != 'undefined') {
@@ -131,7 +133,8 @@ export default function RootLayout({
        return false;
        }
           `}
-      </Script>
+        </Script>
+      </Head>
 
       <body
         className={cn("min-h-screen bg-background font-sans", inter.className)}
