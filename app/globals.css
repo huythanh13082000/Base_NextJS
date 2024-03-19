@@ -19,7 +19,11 @@
 .custom-cursor {
     cursor: url('../public/icons/Pointing.svg'), pointer;
 }
-
+.truncate-text {
+    display:-webkit-box;
+    -webkit-line-clamp:5;
+    -webkit-box-orient: vertical;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 12px;
