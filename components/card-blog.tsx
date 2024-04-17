@@ -79,7 +79,7 @@ const CardBlog = ({ title, description, image, category }: Blog) => {
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <p className="text-base bg-blue-gradient text-transparent bg-clip-text font-bold flex items-center">
+        <p className="text-base bg-blue-gradient text-transparent bg-clip-text font-bold flex items-center transition-all hover:-translate-y-1">
           Read More
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,8 +89,8 @@ const CardBlog = ({ title, description, image, category }: Blog) => {
             fill="none"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M9.21967 17.0303C8.92678 16.7374 8.92678 16.2626 9.21967 15.9697L13.1893 12L9.21967 8.03033C8.92678 7.73744 8.92678 7.26256 9.21967 6.96967C9.51256 6.67678 9.98744 6.67678 10.2803 6.96967L14.7803 11.4697C15.0732 11.7626 15.0732 12.2374 14.7803 12.5303L10.2803 17.0303C9.98744 17.3232 9.51256 17.3232 9.21967 17.0303Z"
               fill="url(#paint0_linear_663_6266)"
             />
@@ -103,8 +103,8 @@ const CardBlog = ({ title, description, image, category }: Blog) => {
                 y2="17.25"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#396FFD" />
-                <stop offset="1" stop-color="#0744E6" />
+                <stop stopColor="#396FFD" />
+                <stop offset="1" stopColor="#0744E6" />
               </linearGradient>
             </defs>
           </svg>
