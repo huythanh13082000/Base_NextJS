@@ -14,6 +14,10 @@ export const NavList: Array<Navbar> = [
     href: "/portfolio",
   },
   {
+    content: "블로그",
+    href: "/blog",
+  },
+  {
     content: "견적계산",
     href: "/estimate-pricing",
   },
