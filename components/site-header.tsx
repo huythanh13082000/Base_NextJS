@@ -19,8 +19,8 @@ const SiteHeader = () => {
   }, [])
   return (
     <div className='sticky top-0 z-40 backdrop-blur-md bg-orange-500'>
-      <div className='flex justify-between items-center w-full p-6'>
-        <div className='font-bold text-2xl text-white'>
+      <div className='flex justify-between items-center w-full px-4 py-3 xl:p-6'>
+        <div className='font-bold text-xl xl:text-2xl text-white'>
           <p>Wedding Talk</p>
         </div>
         <div className='flex gap-4 items-center'>
@@ -29,11 +29,11 @@ const SiteHeader = () => {
             alt=''
             width={52}
             height={52}
-            className='w-[52px] h-[52px]'
+            className='w-8 h-8 xl:w-[52px] xl:h-[52px]'
           />
-          <div className='flex gap-2 px-4 py-3 bg-white rounded-full'>
+          <div className='flex gap-2 xl:px-4 xl:py-3 xl:bg-white xl:rounded-full'>
             <Image src={'/images/Korean.png'} alt='' width={24} height={24} />{' '}
-            <span className='text-lg flex-1'>Korean (KR)</span>
+            <span className='text-lg flex-1 hidden xl:inline-block'>Korean (KR)</span>
           </div>
         </div>
       </div>
