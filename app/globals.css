@@ -4,13 +4,13 @@
 
 @layer base {
 :root {
-    --primary: #010A18;
+    --primary: #FFFFFF;
 }
 }
 
 @layer base {
     body {
-        @apply bg-primary text-white text-base;
+        @apply bg-primary text-black text-base;
     }
 }
 .bg-input-gradient {

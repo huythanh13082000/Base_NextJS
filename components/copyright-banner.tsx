@@ -1,18 +1,22 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
 
 const CopyrightBanner = () => {
   return (
-    <div className="w-full py-10 lg:px-[80px] px-4 xl:px-24 flex justify-between text-[#B1AEC2] text-[14px] text-span max-md:flex-col max-md:gap-3">
-      <p>Copyright© 2022 GREENAPP. All rights reserved</p>
-      <div className="flex gap-4 cursor-pointer">
-        <Image src="/icons/instagram.svg" alt="" width={24} height={24} />
-        <Image src="/icons/youtube.svg" alt="" width={24} height={24} />
-        <Image src="/icons/linkedin.svg" alt="" width={24} height={24} />
-        <Image src="/icons/twitter.svg" alt="" width={24} height={24} />
+    <div className='w-full py-10 lg:px-[80px] px-4 xl:px-20 flex justify-between items-center text-[15px] max-md:flex-col max-md:gap-3'>
+      <p className='text-black flex items-center gap-2'>
+        © 2024 Copyright, All Right Reserved, Made by{' '}
+        <span className='font-bold'>웨딩토크</span>{' '}
+        <Image src={'/images/Path.png'} alt='' width={13} height={15} />
+      </p>
+      <div className='flex gap-4 cursor-pointer'>
+        <Image src='/images/logo-twitter.png' alt='' width={24} height={24} />
+        <Image src='/images/logo-facebook.png' alt='' width={24} height={24} />
+        <Image src='/images/logo-instagram.png' alt='' width={24} height={24} />
+        <Image src='/images/logo-linkedin.png' alt='' width={24} height={24} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CopyrightBanner;
+export default CopyrightBanner
