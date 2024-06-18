@@ -18,8 +18,8 @@ const SiteHeader = () => {
     setIsOpen(false)
   }, [])
   return (
-    <div className='sticky top-0 z-40 backdrop-blur-md bg-orange-500'>
-      <div className='flex justify-between items-center w-full px-4 py-3 xl:p-6'>
+    <div className='fixed top-0 left-0 right-0 z-40'>
+      <div className='flex justify-between items-center w-full px-4 py-6 xl:px-24 max-w-[1440px] mx-auto'>
         <div className='font-bold text-xl xl:text-2xl text-white'>
           <p>Wedding Talk</p>
         </div>
