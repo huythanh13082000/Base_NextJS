@@ -3,21 +3,15 @@ import CustomDivider from '@/components/custom-divider'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import CopyrightBanner from './copyright-banner'
-import { APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD } from '@/constants'
+import {APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD} from '@/constants'
 
 const SiteFooter = () => {
   const router = useRouter()
   return (
     <section className='bg-[#FFF]'>
       <div className='relative h-[400px] w-full lg:px-[80px] px-4 xl:px-24'>
-        <Image
-          src='images/bg-footer.svg'
-          alt=''
-          fill
-          className='z-0 object-cover'
-        />
-        <CustomDivider className='relative mb-[70px]' />
-
+        <br />
+        <br />
         <div className='relative w-full flex max-md:flex-col max-md:gap-10'>
           <div className='flex flex-1 flex-col gap-2 text-[17px] text-[#161C2D] font-medium'>
             <p className='mb-2 text-[15px] text-span'>Company</p>
@@ -65,8 +59,6 @@ const SiteFooter = () => {
             </div>
           </div>
         </div>
-
-        <CustomDivider className='relative sm:mt-20 mt-4' />
         <CopyrightBanner />
       </div>
     </section>
