@@ -3,6 +3,7 @@ import CustomDivider from '@/components/custom-divider'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import CopyrightBanner from './copyright-banner'
+import { APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD } from '@/constants'
 
 const SiteFooter = () => {
   const router = useRouter()
@@ -37,7 +38,11 @@ const SiteFooter = () => {
               <p className='mb-2 text-[#161C2D] text-[15px]'>
                 Download Our App
               </p>
-              <a href='https://docs.greenapps.kr'>
+              <a
+                href={APP_STORE_DOWNLOAD}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <Image
                   src={'/images/AppStore.png'}
                   alt=''
@@ -45,7 +50,11 @@ const SiteFooter = () => {
                   height={60}
                 />
               </a>
-              <a href='https://docs.greenapps.kr/undefined-1'>
+              <a
+                href={GOOGLE_PLAY_DOWNLOAD}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <Image
                   src={'/images/PlayStore.png'}
                   alt=''

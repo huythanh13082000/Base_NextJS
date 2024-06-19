@@ -1,6 +1,40 @@
 import CardPrice from '@/components/card-price'
 import CardReview from '@/components/card-review'
+import {APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD} from '@/constants'
 import Image from 'next/image'
+
+const LIST_PRICE: {
+  title: string
+  price: string
+  quantity: string
+  description: string[]
+  buttonName: string
+}[] = [
+  {
+    title: 'Starter',
+    price: '500',
+    quantity: '1회',
+    description: [
+      '1회 만남 비용 지불',
+      '수동 관리, 전화상담 및 방문',
+      '이성을 본인이 선택 불가',
+      '낮은 성사율',
+    ],
+    buttonName: '결혼 중계 회사',
+  },
+  {
+    title: '웨딩토크',
+    price: '01',
+    quantity: '1회',
+    description: [
+      '매일 1일 무료 카드',
+      '뱃지 인증 제도',
+      '확실한 검증 절차',
+      '높은 성사율',
+    ],
+    buttonName: '웨딩토크',
+  },
+]
 
 export default function Home() {
   return (
@@ -22,7 +56,11 @@ export default function Home() {
                 Download our app
               </p>
               <div className='flex gap-4'>
-                <a href='https://docs.greenapps.kr'>
+                <a
+                  href={APP_STORE_DOWNLOAD}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <Image
                     src={'/images/AppStore.png'}
                     alt=''
@@ -31,7 +69,11 @@ export default function Home() {
                     className='w-[155px] h-[48px] xl:w-[189px] xl:h-[60px]'
                   />
                 </a>
-                <a href='https://docs.greenapps.kr/undefined-1'>
+                <a
+                  href={GOOGLE_PLAY_DOWNLOAD}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <Image
                     src={'/images/PlayStore.png'}
                     alt=''
@@ -214,12 +256,7 @@ export default function Home() {
 
         <div className="object-cover bg-cover bg-center bg-no-repeat xl:bg-[url('/images/background-black.svg')] bg-[url('/images/background-black-mobile.svg')]  xl:pt-[300px] xl:py-[100px] w-full text-white flex flex-col justify-center items-center">
           <div className='xl:hidden'>
-            <Image
-              src={'/images/Wave2.svg'}
-              alt=''
-              width={1110}
-              height={652}
-            />
+            <Image src={'/images/Wave2.svg'} alt='' width={1110} height={652} />
           </div>
           <div>
             <p className='font-bold xl:text-5xl text-center xl:mt-[100px] mt-[32px] xl:leading-[60px] text-[26px] leading-9'>
@@ -267,16 +304,18 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='flex gap-6 items-start'>
+            <div className='flex flex-col xl:flex-row xl:gap-6 gap-3  xl:items-start items-center'>
               <Image
                 src={'/images/share-91.svg'}
                 alt=''
                 width={33}
                 height={44}
               />
-              <div className='flex flex-col gap-4'>
-                <p className='font-bold text-[21px]'>이런 기능 원해요!</p>
-                <p className='opacity-65'>
+              <div className='flex flex-col gap-4 text-center xl:text-start'>
+                <p className='font-bold xl:text-[21px] text-lg'>
+                  이런 기능 원해요!
+                </p>
+                <p className='opacity-65 text-sm xl:text-base'>
                   웨딩토크에서 원하는 기능이 있다면
                   <br /> 의견을 남겨주세요.
                   <br /> 회원님들의 의견을 수렴해 더욱 성장하
@@ -285,16 +324,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='flex gap-6 items-start'>
+            <div className='flex flex-col xl:flex-row xl:gap-6 gap-3  xl:items-start items-center'>
               <Image
                 src={'/images/video_meeting.svg'}
                 alt=''
                 width={33}
                 height={44}
               />
-              <div className='flex flex-col gap-4'>
-                <p className='font-bold text-[21px]'>뱃지 기능</p>
-                <p className='opacity-65'>
+              <div className='flex flex-col gap-4 text-center xl:text-start'>
+                <p className='font-bold xl:text-[21px] text-lg'>뱃지 기능</p>
+                <p className='opacity-65 text-sm xl:text-base'>
                   여러분이 가진 매력들을 인증하시면
                   <br /> 뱃지를 수여해 드려요. 프로필을 잘 꾸며
                   <br /> 주실수록 더욱 다채로운 경험이 기다리
@@ -303,16 +342,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='flex gap-6 items-start'>
+            <div className='flex flex-col xl:flex-row xl:gap-6 gap-3  xl:items-start items-center'>
               <Image
                 src={'/images/opening-times.svg'}
                 alt=''
                 width={33}
                 height={44}
               />
-              <div className='flex flex-col gap-4'>
-                <p className='font-bold text-[21px]'>모임 기능</p>
-                <p className='opacity-65'>
+              <div className='flex flex-col gap-4 text-center xl:text-start'>
+                <p className='font-bold xl:text-[21px] text-lg'>모임 기능</p>
+                <p className='opacity-65 text-sm xl:text-base'>
                   허심탄회한 소통이 가능하도록 했어요
                   <br />
                   24시간 모니터링팀이 관리합니다.
@@ -320,16 +359,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='flex gap-6 items-start'>
+            <div className='flex flex-col xl:flex-row xl:gap-6 gap-3  xl:items-start items-center'>
               <Image
                 src={'/images/card-favorite.svg'}
                 alt=''
                 width={33}
                 height={44}
               />
-              <div className='flex flex-col gap-4'>
-                <p className='font-bold text-[21px]'>낮은 비용</p>
-                <p className='opacity-65'>
+              <div className='flex flex-col gap-4 text-center xl:text-start'>
+                <p className='font-bold xl:text-[21px] text-lg'>낮은 비용</p>
+                <p className='opacity-65 text-sm xl:text-base'>
                   다이아가 웨딩 토크의 재화이며, 5다이
                   <br /> 아가 3천원부터 저렴한 비용으로
                   <br /> 측정되어 있어요.
@@ -365,15 +404,37 @@ export default function Home() {
         </div>
 
         <div className='pt-[60px] bg-[#F4F7FA]'>
-          <p className='xl:text-5xl text-2xl font-bold text-center'>비용이 걱정되시나요?</p>
-          <br className='hidden xl:inline-block'/>
+          <p className='xl:text-5xl text-2xl font-bold text-center'>
+            비용이 걱정되시나요?
+          </p>
+          <br className='hidden xl:inline-block' />
           <p className='xl:text-[19px] opacity-70 text-[#161C2D] text-center'>
             결혼 중계와 비교도 안되는 비용으로 이용 가능해요
           </p>
 
-          <div className='flex flex-col items-center xl:flex-row xl:gap-[30px] gap-2xl mt-11 justify-center xl:mb-36 mb-11'>
-            <CardPrice />
-            <CardPrice />
+          <div className='flex flex-col items-center xl:flex-row xl:gap-[30px] gap-6 gap-2xl mt-11 justify-center xl:mb-36 mb-11'>
+            {LIST_PRICE.map((item, index) => (
+              <CardPrice
+                {...item}
+                key={item.title}
+                styleCard={
+                  index === 1
+                    ? {
+                        boxShadow: '0px 32px 64px 0px rgba(22, 28, 45, 0.08)',
+                        borderRadius: '10px',
+                        background: '#FFF',
+                      }
+                    : {}
+                }
+                styleButton={
+                  index === 1
+                    ? {
+                        background: '#F74D4D',
+                      }
+                    : {}
+                }
+              />
+            ))}
           </div>
 
           <Image

@@ -1,0 +1,2 @@
+export const GOOGLE_PLAY_DOWNLOAD = 'https://play.google.com/store/apps/details?id=com.greenapps.weddingtalk&pli=1'
+export const APP_STORE_DOWNLOAD = 'https://apps.apple.com/kr/app/%EC%9B%A8%EB%94%A9%ED%86%A0%ED%81%AC/id6476545007'
