@@ -1,9 +1,8 @@
 'use client'
-import CustomDivider from '@/components/custom-divider'
+import { APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD } from '@/constants'
 import Image from 'next/image'
-import {useRouter} from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import CopyrightBanner from './copyright-banner'
-import {APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD} from '@/constants'
 
 const SiteFooter = () => {
   const router = useRouter()

@@ -8,7 +8,6 @@ import Script from 'next/script'
 import './globals.css'
 
 import SiteFooter from '@/components/site-footer'
-import {Toaster} from '@/components/ui/sonner'
 import {getFrontEndUrl} from '@/lib/getBaseUrl'
 
 const noto = Noto_Sans_KR({subsets: ['latin']})
@@ -93,7 +92,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <Script
+      {/* <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy='afterInteractive'
       />
@@ -104,14 +103,14 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     gtag('js', new Date());
     gtag('config', '${GA_MEASUREMENT_ID}');
   `}
-      </Script>
+      </Script> */}
 
-      <Script id='gtag-event' strategy='afterInteractive'>
+      {/* <Script id='gtag-event' strategy='afterInteractive'>
         {`
         gtag('event', 'conversion', {'send_to': '${GA_MEASUREMENT_ID}/${GA_CONVERSION_LABEL}'});
           `}
-      </Script>
-      <Script id='gtag-event-init' strategy='afterInteractive'>
+      </Script> */}
+      {/* <Script id='gtag-event-init' strategy='afterInteractive'>
         {`
         function gtag_report_conversion(url) {
         var callback = function () {
@@ -126,7 +125,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
        return false;
        }
           `}
-      </Script>
+      </Script> */}
 
       <body
         className={cn('min-h-screen bg-background font-sans', noto.className)}
@@ -140,20 +139,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <TailwindIndicator />
           </div>
         </ThemeProvider>
-        <Toaster
-          position='top-right'
-          toastOptions={{
-            unstyled: true,
-            classNames: {
-              toast:
-                'bg-toast opacity-40 text-opacity-100 font-bold gap-2 p-3 rounded-full flex items-center justify-between',
-              error: 'text-red-400',
-              success: 'text-green-400',
-              warning: 'text-yellow-400',
-              info: 'bg-blue-400',
-            },
-          }}
-        />
       </body>
     </html>
   )
