@@ -10,16 +10,21 @@ const CardPrice = (props: {
   styleButton?: React.CSSProperties
 }) => {
   return (
-    <div style={props.styleCard} className='rounded-lg p-6 xl:w-80 w-[343px] border-[#E7E9ED] border-[1px]'>
+    <div
+      style={props.styleCard}
+      className='rounded-lg p-6 xl:w-80 w-[343px] border-[#E7E9ED] border-[1px]'
+    >
       <div className='text-center'>
         <h2 className='xl:text-sm text-[13px] font-semibold text-red-500'>
           {props.title}
         </h2>
         <p className='font-bold text-gray-900 xl:mt-11 mt-2 mb-8 xl:text-[65px] text-xl'>
           ${props.price}
-          <span className='xl:text-[17px] text-base font-normal text-gray-500'>
-            /{props.quantity}
-          </span>
+          {props.quantity && (
+            <span className='xl:text-[17px] text-base font-normal text-gray-500'>
+              /{props.quantity}
+            </span>
+          )}
         </p>
       </div>
       <div className='mt-4 space-y-4 xl:text-[19px] flex flex-col xl:gap-3'>
@@ -41,7 +46,10 @@ const CardPrice = (props: {
         <p className='text-center text-gray-700'>낮은 성사율</p> */}
       </div>
       <div className='mt-6 text-center'>
-        <button style={props.styleButton} className='bg-gray-900 text-white py-2 rounded-lg font-semibold xl:h-[59px] h-[52px] xl:text-[17px] xl:w-[219px] w-[200px]'>
+        <button
+          style={props.styleButton}
+          className='bg-gray-900 text-white py-2 rounded-lg font-semibold xl:h-[59px] h-[52px] xl:text-[17px] xl:w-[219px] w-[200px]'
+        >
           {props.buttonName}
         </button>
       </div>

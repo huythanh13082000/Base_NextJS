@@ -21,7 +21,7 @@ const SiteHeader = () => {
     <div className='fixed top-0 left-0 right-0 z-40'>
       <div className='flex justify-between items-center w-full px-4 py-6 xl:px-24 max-w-[1440px] mx-auto'>
         <div className='font-bold text-xl xl:text-2xl text-white'>
-          <p>Wedding Talk</p>
+          <p>HealerGo</p>
         </div>
         <div className='flex gap-4 items-center'>
           <Image

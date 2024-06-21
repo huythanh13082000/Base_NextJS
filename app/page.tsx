@@ -11,28 +11,28 @@ const LIST_PRICE: {
   buttonName: string
 }[] = [
   {
-    title: 'Starter',
-    price: '500',
-    quantity: '1회',
+    title: '일반 사용',
+    price: '0',
+    quantity: '',
     description: [
-      '1회 만남 비용 지불',
-      '수동 관리, 전화상담 및 방문',
-      '이성을 본인이 선택 불가',
-      '낮은 성사율',
+      '관리사 3회 확인',
+      '채팅기능',
+      '리뷰기능',
+      '예약관리 기능',
     ],
-    buttonName: '결혼 중계 회사',
+    buttonName: '무료',
   },
   {
-    title: '웨딩토크',
-    price: '01',
-    quantity: '1회',
+    title: '구독료',
+    price: '10',
+    quantity: '',
     description: [
-      '매일 1일 무료 카드',
-      '뱃지 인증 제도',
-      '확실한 검증 절차',
-      '높은 성사율',
+      '관리사 무제한 확인',
+      '채팅기능',
+      '리뷰기능',
+      '예약관리 기능',
     ],
-    buttonName: '웨딩토크',
+    buttonName: '프리미엄',
   },
 ]
 
@@ -45,11 +45,11 @@ export default function Home() {
             <Image src={'/images/logo.png'} alt='' width={123} height={72} />
 
             <p className='xl:text-6xl xl:mt-8 font-bold text-[32px] my-4 xl:my-0'>
-              웨딩토크
+              HealerGo
             </p>
             <p className='font-bold xl:text-[40px] xl:mt-7 xl:leading-[60px] opacity-65 text-xl leading-7 text-center xl:text-start'>
-              결혼하고 싶은 그 사람 <br />
-              바로 여기 있어요
+              이젠 마사지도 택시처럼 <br />
+              내가 있는 곳에서 가능해요
             </p>
             <div>
               <p className='text-center xl:text-start xl:mt-[60px] xl:mb-[23px] mt-[24px] mb-4 xl:text-[13px] text-xs font-bold uppercase'>
@@ -101,22 +101,17 @@ export default function Home() {
         <Image src={'/images/image1.svg'} alt='' width={582} height={548} />
         <div className='xl:p-0 p-4 flex flex-col gap-6 xl:text-[19px] opacity-70 leading-[30px] text-[#161C2D]'>
           <p className='xl:text-5xl font-bold xl:leading-[60px] text-2xl text-black'>
-            결혼할 상대를 찾고 <br className='hidden xl:inline-block' />
-            있나요?
+            내가 있는 곳에서 <br className='hidden xl:inline-block' />
+            마사지를 받아 보세요
           </p>
           <p>
-            웨딩토크는 결혼을 신중히 고민하는 사람들을 위해 <br />
-            탄생한 앱입니다.
+            국내와 해외에서 늘 매장을 찾아만 다니셨나요? <br />
+            이제는 내가 있는 곳에서 택시처럼 전문 마사지사를 <br />
+            불러 관리받을 수 있습니다.
           </p>
           <p>
-            본인 인증과 내 사진 인증을 통한 가입 후 시작할 수 <br />
-            있으며 본인의 소득, 직업, 자산 등의 정보의 경우 추가 인증할 수{' '}
-            <br />
-            있습니다
-          </p>
-          <p>
-            결혼할 상대를 만나고 싶다면 웨딩토크에서 시작해
-            <br /> 보세요!
+            전 세계 어디서나 누리는 최상의 마사지 <br />
+            힐러고 앱에서는 집, 호텔 어디든 호출이 가능합니다.
           </p>
         </div>
       </div>
@@ -124,24 +119,24 @@ export default function Home() {
       <div className='xl:py-[100px] py-6 flex flex-col xl:flex-row gap-[32px] xl:justify-center xl:items-center'>
         <div className='flex flex-col gap-6 xl:p-0 p-4 leading-[30px] text-[#161C2D]'>
           <p className='xl:text-5xl font-bold xl:leading-[60px] text-black text-2xl'>
-            웨딩토크에서 가능해요
+            엄선된 전문 마사지사
           </p>
           <p className='opacity-70 xl:text-[19px]'>
-            결혼을 진지하게 생각하는 사람들과 소통할 수 있 <br />
-            어요! 다양한 기능들로 상대를 탐색해 보세요.
+            경력 3년 이상의 전문 마사지사가 최상의 힐링을 <br />
+            선사합니다.
           </p>
           <div>
-            <p className='font-bold xl:text-xl text-lg'>약속해요</p>
+            <p className='font-bold xl:text-xl text-lg'>확인 가능 한 리뷰</p>
             <p className='opacity-70 xl:text-[17px]'>
-              웨딩토크에서는 사진도 용이 불가능하도록 제출 <br />한 사진과 현재
-              카메라에 비친 내 모습의 AI 판독!
+              해당 홈케어 업소를 이용한 회원님들이 남긴 <br />
+              다양한 리뷰를 확인할 수 있습니다.
             </p>
           </div>
           <div>
-            <p className='font-bold xl:text-xl text-lg'>인증해요</p>
+            <p className='font-bold xl:text-xl text-lg'>내 위치에서 호출</p>
             <p className='opacity-70 xl:text-[17px]'>
-              여러분의 매력을 더욱 뽐낼 수 있는 뱃지의 경우, <br />
-              추가 인증 및 심사를 통해 부여해 드리고 있어요
+              여행 중이라도 숙소 위치를 설정해 미리 예약이 가 <br />
+              능합니다.
             </p>
           </div>
         </div>
@@ -150,10 +145,10 @@ export default function Home() {
 
       <div className='xl:pt-[66px] pt-6 xl:px-0 flex flex-col xl:justify-center xl:items-center'>
         <p className='font-bold xl:text-5xlx xl:mb-6 text-[26px] px-4 xl:px-0'>
-          어떻게 가입하나요?
+          이용절차가 궁금하나요?
         </p>
         <p className='xl:text-[19px] opacity-70 mt-2 xl:mt-0 px-4 xl:px-0'>
-          간편한 전화번호 인증으로 가입해 보세요
+          간편한 전화번호 인증으로 가입 후 이용 가능해요
         </p>
 
         <div className='flex gap-[26px] xl:hidden mt-6 items-start mb-8 px-4 xl:px-0'>
@@ -168,23 +163,23 @@ export default function Home() {
               </p>
             </div>
             <div className='flex flex-col gap-2'>
-              <p className='font-bold'>전화번호 가입</p>
+              <p className='font-bold'>이용하기</p>
               <p className='text-sm opacity-70'>
-                웨딩토크에서는 실사가 아니면
+                현재 내 위치에서 혹은 위치 설정을
                 <br />
-                가입 불가! 그러니 잘 나온
+                한 후 시간과 코스만 선택하면
                 <br />
-                사진을 준비해두세요!
+                예약 완료!
               </p>
             </div>
             <div className='flex flex-col gap-2'>
-              <p className='font-bold'>전화번호 가입</p>
+              <p className='font-bold'>관리받기</p>
               <p className='text-sm opacity-70'>
-                여기까지 하셨다면 마지막 단계만 남았어요.
+                집, 호텔 등 내가 있는 장소에서
                 <br />
-                담당자가 실사가 실제 맞는지 확인하고 심사
+                편하게 마사지 관리가 가능,
                 <br />
-                승인이 되세요!
+                전문 관리사가 힐링을 선사합니다.
               </p>
             </div>
           </div>

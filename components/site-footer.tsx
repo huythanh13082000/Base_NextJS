@@ -1,7 +1,7 @@
 'use client'
-import { APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD } from '@/constants'
+import {APP_STORE_DOWNLOAD, GOOGLE_PLAY_DOWNLOAD} from '@/constants'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import {useRouter} from 'next/navigation'
 import CopyrightBanner from './copyright-banner'
 
 const SiteFooter = () => {
@@ -58,6 +58,7 @@ const SiteFooter = () => {
             </div>
           </div>
         </div>
+        <div className='xl:my-10 my-4  border-t-[1px]'></div>
         <CopyrightBanner />
       </div>
     </section>
