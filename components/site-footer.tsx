@@ -58,6 +58,7 @@ const SiteFooter = () => {
             </div>
           </div>
         </div>
+        <div className='xl:my-10 border-t-[1px] my-4'></div>
         <CopyrightBanner />
       </div>
     </section>

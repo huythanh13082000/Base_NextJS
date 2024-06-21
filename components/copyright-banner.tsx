@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const CopyrightBanner = () => {
   return (
-    <div className='w-full py-10 lg:px-[80px] px-4 xl:px-20 flex justify-between items-center text-[15px] max-md:flex-col max-md:gap-3'>
+    <div className='w-full py-10 lg:px-[80px] px-4 xl:p-0 flex justify-between items-center text-[15px] max-md:flex-col max-md:gap-3'>
       <p className='text-black flex items-center gap-2 whitespace-nowrap text-[12px]'>
         © 2024 Copyright, All Right Reserved, Made by{' '}
         <span className='font-bold'>웨딩토크</span>{' '}
