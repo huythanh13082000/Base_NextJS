@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     '해외 개발자 채용 플랫폼인 지엠포컴퍼니 엄격한 검증 절차를 통과한 전세계 상위10% 개발자를 1주안에 채용합니다. 개발자 모집부터 검증 및 채용까지 개발자 채용에 필요한 모든 서비스를 원스톱 형태로 기업이 원하는 개발자를 채용가능합니다. 앱개발,웹개발,소프트웨어개발,앱제작,웹제작,개발자채용,개발자프리렌서',
   icons: {
-    icon: '/images/logo_new_header.png',
+    icon: '/images/logo.png',
   },
   alternates: {
     canonical: '/',
@@ -75,9 +75,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [
-      {url: '/images/avatar.png'},
+      {url: '/images/logo.png'},
       {url: 'https://d1gey57zr11abr.cloudfront.net/avatar.png'},
-      {url: '/images/logo_new_header.png'},
+      {url: '/images/logo.png'},
     ],
     emails: ['gm4-korea@greenapps.kr'],
   },
